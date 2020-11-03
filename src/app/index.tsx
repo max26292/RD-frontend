@@ -11,10 +11,11 @@ import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
-
+import 'styles/scss/App.scss';
 import { HomePage } from './containers/HomePage/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
-
+import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
+import { LoginForm } from 'app/components/LoginForm';
 export function App() {
   return (
     <BrowserRouter>
@@ -27,6 +28,17 @@ export function App() {
 
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route
+          path="/auth"
+          render={({ match: { url } }) => (
+            <AuthorizeContainer>
+              <Route path={`${url}/login`} component={LoginForm} />
+            </AuthorizeContainer>
+          )}
+        />
+        <Route path="/auth" component={AuthorizeContainer}>
+          {/* <Route path={`/login`} component={LoginForm} /> */}
+        </Route>
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

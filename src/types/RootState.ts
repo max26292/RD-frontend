@@ -1,3 +1,4 @@
+import { AuthorizeContainerState } from 'app/containers/AuthorizeContainer/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -5,5 +6,6 @@
   You have to declare them here manually
 */
 export interface RootState {
+  authorizeContainer?: AuthorizeContainerState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }
