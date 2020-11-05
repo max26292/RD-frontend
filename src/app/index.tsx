@@ -37,9 +37,7 @@ export function App() {
           )}
         />
         <Route path="/auth" component={AuthorizeContainer}>
-        <Route path={`/login`} component={LoginForm} /> 
-
-        
+          {/* <Route path={`/login`} component={LoginForm} /> */}
         </Route>
         <Route component={NotFoundPage} />
       </Switch>
