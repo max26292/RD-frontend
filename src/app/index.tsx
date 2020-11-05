@@ -28,6 +28,7 @@ export function App() {
 
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/dashboard" component={HomePage} />
         <Route
           path="/auth"
           render={({ match: { url } }) => (
@@ -36,9 +37,6 @@ export function App() {
             </AuthorizeContainer>
           )}
         />
-        <Route path="/auth" component={AuthorizeContainer}>
-          {/* <Route path={`/login`} component={LoginForm} /> */}
-        </Route>
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
