@@ -3,6 +3,8 @@ import qs from 'qs';
 import { isEmpty } from 'lodash';
 import { Redirect } from 'react-router-dom';
 import './scss/loginPage.scss';
+
+
 interface LoginInfo {
   username: string;
   password: string | number;
@@ -33,13 +35,12 @@ export const LoginPage = props => {
     return <Redirect to="/dashboard" />;
   }
   return (
-    <form>
+    <form className="loginForm">
       <label className="user-name" htmlFor="username">
-        Username
-      </label>
-      <input
-        placeholder="Username"
-        value={username}
+        Username: 
+      <input 
+        placeholder="email"
+        value={ username }
         name="username"
         onChange={event => {
           setCredentials({
@@ -48,11 +49,14 @@ export const LoginPage = props => {
           });
         }}
       />
-      <label htmlFor="password">Password</label>
+      </label>
+
+      <label className="pass-word" htmlFor="password">
+        Password:
       <input
-        placeholder="Password"
+        placeholder="pass"
         type="password"
-        value={password}
+        value={ password }
         name="password"
         onChange={event => {
           setCredentials({
@@ -61,7 +65,9 @@ export const LoginPage = props => {
           });
         }}
       />
-      <button
+      </label>
+
+      <button className="but-ton"
         type="submit"
         onSubmit={e => {
           console.debug(e);

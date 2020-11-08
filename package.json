@@ -21,7 +21,7 @@
     "@types/react-redux": "7.1.7",
     "@types/react-router-dom": "5.1.3",
     "@types/react-test-renderer": "16.9.2",
-    "@types/styled-components": "5.0.1",
+    "@types/styled-components": "5.1.4",
     "@types/testing-library__jest-dom": "5.0.2",
     "@types/webpack-env": "1.15.1",
     "apexcharts": "^3.20.0",
@@ -71,6 +71,7 @@
     "react-dropzone": "^11.0.3",
     "react-helmet-async": "1.0.4",
     "react-i18next": "11.3.4",
+    "react-icons": "3.11.0",
     "react-image-lightbox": "^5.1.1",
     "react-jvectormap": "0.0.16",
     "react-ladda": "^6.0.0",
@@ -89,7 +90,7 @@
     "serve": "11.3.0",
     "shelljs": "0.8.3",
     "simplebar-react": "^3.0.0-beta.5",
-    "styled-components": "5.0.1",
+    "styled-components": "5.2.1",
     "stylelint": "13.2.1",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-config-styled-components": "0.1.1",
@@ -158,5 +159,8 @@
         "statements": 90
       }
     }
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "1.11.1"
   }
 }

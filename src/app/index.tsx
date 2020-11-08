@@ -16,6 +16,9 @@ import { HomePage } from './containers/HomePage/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
 import { LoginForm } from 'app/components/LoginForm';
+
+
+
 export function App() {
   return (
     <BrowserRouter>
@@ -37,6 +40,8 @@ export function App() {
             </AuthorizeContainer>
           )}
         />
+      
+
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
