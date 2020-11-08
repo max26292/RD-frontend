@@ -1,4 +1,4 @@
-FROM max26292/react_preinstall:lastest as builder
+FROM max26292/react_preinstall:latest as builder
 
 WORKDIR /home/app 
 

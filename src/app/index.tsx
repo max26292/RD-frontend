@@ -13,11 +13,10 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from 'styles/global-styles';
 import 'styles/scss/App.scss';
 import { HomePage } from './containers/HomePage/Loadable';
+import { MainLayout } from 'app/containers/MainLayout';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
 import { LoginForm } from 'app/components/LoginForm';
-
-
 
 export function App() {
   return (
@@ -30,7 +29,7 @@ export function App() {
       </Helmet>
 
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={MainLayout} />
         <Route exact path="/dashboard" component={HomePage} />
         <Route
           path="/auth"
@@ -40,7 +39,6 @@ export function App() {
             </AuthorizeContainer>
           )}
         />
-      
 
         <Route component={NotFoundPage} />
       </Switch>

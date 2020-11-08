@@ -1,4 +1,5 @@
 import { AuthorizeContainerState } from 'app/containers/AuthorizeContainer/types';
+import { MainLayoutState } from 'app/containers/MainLayout/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -7,5 +8,6 @@ import { AuthorizeContainerState } from 'app/containers/AuthorizeContainer/types
 */
 export interface RootState {
   authorizeContainer?: AuthorizeContainerState;
+  mainLayout?: MainLayoutState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

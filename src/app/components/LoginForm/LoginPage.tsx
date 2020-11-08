@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Button, Col, Row, Alert } from 'reactstrap';
+import { AvForm, AvField } from 'availity-reactstrap-validation';
 import qs from 'qs';
 import { isEmpty } from 'lodash';
 import { Redirect } from 'react-router-dom';
 import './scss/loginPage.scss';
-
+import { AnyARecord } from 'dns';
 
 interface LoginInfo {
   username: string;
@@ -18,9 +20,9 @@ export const LoginPage = props => {
     password: '',
   });
 
-  const login = (event: React.FormEvent) => {
+  const login = (event: React.FormEvent, value: any) => {
     event.preventDefault();
-    console.debug({ username }, { password });
+    console.debug({ value }, { username }, { password });
     // const response = await onLogin({
     //   username,
     //   password,
@@ -35,56 +37,84 @@ export const LoginPage = props => {
     return <Redirect to="/dashboard" />;
   }
   return (
-    <form className="loginForm">
-      <label className="user-name" htmlFor="username">
-        Username: 
-      <input 
-        placeholder="email"
-        value={ username }
-        name="username"
-        onChange={event => {
-          setCredentials({
-            username: event.target.value,
-            password,
-          });
-        }}
-      />
-      </label>
+    <React.Fragment>
+      <div className="wrapper">
+        <div className="container-fluid">
+          <Row>
+            <div className="login-bg">
+              <div className="login-overlay"></div>
+              {/* <div className="login-left">
+                                    <img src={loginLogo} alt="Logo" />
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tellus elit.</p>
+                                    <button className="btn btn-primary">Learn More</button>
+                                </div> */}
+            </div>
 
-      <label className="pass-word" htmlFor="password">
-        Password:
-      <input
-        placeholder="pass"
-        type="password"
-        value={ password }
-        name="password"
-        onChange={event => {
-          setCredentials({
-            username,
-            password: event.target.value,
-          });
-        }}
-      />
-      </label>
+            <div className="login-form">
+              <AvForm
+                id="login_form_sec"
+                onValidSubmit={login}
+                onInvalidSubmit={data => {
+                  console.debug('invalid', data);
+                }}
+              >
+                <div className="login-form-body">
+                  {/* {this.props.user && (
+                    <Alert color="success">Your Login is successfull.</Alert>
+                  )}
 
-      <button className="but-ton"
-        type="submit"
-        onSubmit={e => {
-          console.debug(e);
-          login(e);
-        }}
-      >
-        Login
-      </button>
-    </form>
+                  {this.props.loginError && (
+                    <Alert color="danger">{this.props.loginError}</Alert>
+                  )} */}
+
+                  <div>
+                    <AvField
+                      name="email"
+                      label="Email"
+                      value={username}
+                      placeholder="Enter Email Address"
+                      validate={{ email: true }}
+                      type="text"
+                      required
+                    />
+                  </div>
+                  <div className="mb-2">
+                    <AvField
+                      name="password"
+                      label="Password"
+                      value={password}
+                      placeholder="Enter Password"
+                      type="password"
+                      required
+                    />
+                  </div>
+
+                  <div className="submit-btn-area">
+                    <Button
+                      color="primary"
+                      className="btn btn-primary"
+                      type="submit"
+                    >
+                      Log In <i className="ti-arrow-right"></i>
+                    </Button>
+                    {/* <div className="login-other row mt-4">
+                                                <Col sm="6">
+                                                    <button className="fb-login"><span className="login_txt">Log in with</span>  <i className="fa fa-facebook"></i></button>
+                                                </Col>
+                                                <Col sm="6">
+                                                    <button className="google-login"><span className="login_txt">Log in with</span>  <i className="fa fa-google"></i></button>
+                                                </Col>
+                                            </div> */}
+                  </div>
+                  {/* <div className="form-footer text-center mt-5">
+                                            <p className="text-muted">Don't have Account? <Link to="/register"><i className="mdi mdi-lock"></i> Register Now</Link></p>
+                                        </div> */}
+                </div>
+              </AvForm>
+            </div>
+          </Row>
+        </div>
+      </div>
+    </React.Fragment>
   );
 };
-
-class loginFormExam extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      test: '',
-    };
-  }
-}
