@@ -84,6 +84,7 @@ class Navbar extends React.Component<Props, State> {
   };
 
   toggleFullscreen() {
+    console.debug('this function is called');
     if (
       !document.fullscreenElement &&
       /* alternative standard method */ !document.mozFullScreenElement &&
@@ -151,6 +152,7 @@ class Navbar extends React.Component<Props, State> {
                   className="d_none_sm"
                   onClick={this.toggleFullscreen}
                 >
+                  FullScreen button
                   <i className="feather ft-maximize"></i>
                 </li>
 

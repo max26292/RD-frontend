@@ -10,7 +10,7 @@ function App() {
       <Route>
         <Sidebar />
         <switch>
-          <Route path="/" />  
+          <Route path="/" />
         </switch>
       </Route>
     </>
