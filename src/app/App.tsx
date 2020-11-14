@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import './App.scss';
-import Navbar from './components/Navbar-test';
+
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
     <>
       <Route>
-        <Navbar />
+        <Sidebar />
         <switch>
-          <Route path="/" />
+          <Route path="/" />  
         </switch>
       </Route>
     </>

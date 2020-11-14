@@ -18,6 +18,8 @@ import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
 import { LoginForm } from 'app/components/LoginForm';
 
+// import {Navbar} from './components/Navbar';
+
 export function App() {
   return (
     <BrowserRouter>
@@ -31,13 +33,14 @@ export function App() {
       <Switch>
         <Route exact path="/" component={MainLayout} />
         <Route exact path="/dashboard" component={HomePage} />
+        
         <Route
           path="/auth"
           render={({ match: { url } }) => (
             <AuthorizeContainer>
               <Route path={`${url}/login`} component={LoginForm} />
             </AuthorizeContainer>
-          )}
+          )} 
         />
 
         <Route component={NotFoundPage} />
