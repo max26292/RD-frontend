@@ -12,7 +12,10 @@ import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
 import { selectMainLayout } from './selectors';
 import { mainLayoutSaga } from './saga';
-import { Navbar } from 'app/components/Navbar';
+import  Navbar from '../../components/Navbar';
+import { Sidebar } from 'app/components/Sidebar';
+
+
 interface Props {}
 
 export function MainLayout(props: Props) {
@@ -24,11 +27,20 @@ export function MainLayout(props: Props) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
 
+  
+
+
+
   return (
     <>
-      <Div>
+      <div>
+      <Sidebar />
+      <div>
         <Navbar />
-      </Div>
+      </div>
+    </div>
+
+
     </>
   );
 }
