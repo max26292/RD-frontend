@@ -16,7 +16,7 @@ export class Sidebar extends Component {
   componentDidMount() {
     new MetisMenu('#menu', {}); //object
 
-    var matchingMenuItem = null;
+    let matchingMenuItem = null;
     const ul = document.getElementById('menu');
     const items = ul.getElementsByTagName('a');
 
@@ -64,36 +64,14 @@ export class Sidebar extends Component {
             <div className="main-menu">
               <div className="menu-inner" id="sidebar_menu">
                 <nav>
-                  <ul className="metismenu" id="menu">
-                    <li>
-                      <Link to="/#">
-                        <i className="feather ft-home"></i>
-                        <span>dashboard</span>
-                      </Link>
-                      <ul className="submenu">
-                        <li>
-                          <Link to="dashboard">
-                            <span>Dashboard V1</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="dashboard-2">
-                            <span>Dashboard V2</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="dashboard-3">
-                            <span>Dashboard V3</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
+                  <li className="metismenu" id="menu">
 
                     <li>
                       <Link to="/#">
-                        <i className="feather ft-gitlab"></i>
-                        <span>UI Features</span>
+                        <i className=""></i>
+                        <span>Declare Categories</span>
                       </Link>
+
                       <ul className="submenu">
                         <li>
                           <Link to="alert">
@@ -178,8 +156,8 @@ export class Sidebar extends Component {
 
                     <li>
                       <Link to="/#">
-                        <i className="feather ft-briefcase"></i>
-                        <span>Advance Kit</span>
+                        <i className=""></i>
+                        <span>The List of warehouse</span>
                       </Link>
                       <ul className="submenu">
                         <li>
@@ -217,8 +195,10 @@ export class Sidebar extends Component {
 
                     <li>
                       <Link to="/#">
-                        <i className="feather ft-award"></i>
-                        <span>Icons</span>
+                        <i className=""></i>
+                        <span>
+                          Declare account Categories
+                        </span>
                       </Link>
                       <ul className="submenu">
                         <li>
@@ -229,8 +209,8 @@ export class Sidebar extends Component {
                         </li>
                         <li>
                           <Link to="themify">
-                            <i className="ti-themify-favicon"></i>
-                            <span>Themify</span>
+                            <i className=""></i>
+                            <span>Declare the list of cases</span>
                           </Link>
                         </li>
                         <li>
@@ -250,8 +230,8 @@ export class Sidebar extends Component {
 
                     <li>
                       <Link to="/#">
-                        <i className="feather ft-map-pin"></i>
-                        <span>Maps</span>
+                        <i className=""></i>
+                        <span> Accounting documents</span>
                       </Link>
                       <ul className="submenu">
                         <li>
@@ -271,8 +251,8 @@ export class Sidebar extends Component {
 
                     <li>
                       <Link to="/#">
-                        <i className="feather ft-credit-card"></i>
-                        <span>Tables</span>
+                        <i className=""></i>
+                        <span>Documents Arising</span>
                       </Link>
                       <ul className="submenu">
                         <li>
@@ -292,8 +272,8 @@ export class Sidebar extends Component {
 
                     <li>
                       <Link to="/#">
-                        <i className="feather ft-clipboard"></i>
-                        <span>Forms</span>
+                        <i className=""></i>
+                        <span>Reporting System</span>
                       </Link>
                       <ul className="submenu">
                         <li>
@@ -316,208 +296,7 @@ export class Sidebar extends Component {
                         </li>
                       </ul>
                     </li>
-
-                    <li>
-                      <Link to="/#">
-                        <i className="feather ft-edit"></i>
-                        <span>Editors</span>
-                      </Link>
-                      <ul className="submenu">
-                        <li>
-                          <Link to="text-editor">
-                            <i className="ti-uppercase"></i>
-                            <span>Text Editor</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="code-editor">
-                            <i className="ion-code"></i>
-                            <span>Code Editor</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <Link to="full-calendar">
-                        <i className="feather ft-calendar"></i>
-                        <span>Calendar</span>
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link to="/#">
-                        <i className="feather ft-pie-chart"></i>
-                        <span>Charts</span>
-                      </Link>
-                      <ul className="submenu">
-                        <li>
-                          <Link to="chart-js">
-                            <i className="feather ft-bar-chart"></i>
-                            <span>Chart Js</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="echart">
-                            <i className="feather ft-bar-chart-2"></i>
-                            <span>E Chart Js</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="c3-chart">
-                            <i className="feather ft-bar-chart-line"></i>
-                            <span>C3 Chart Js</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="chartist">
-                            <i className="feather ft-bar-chart-line-"></i>
-                            <span>Chartist Js</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="apex">
-                            <i className="feather ft-bar-chart-line-"></i>
-                            <span>Apex Js</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <Link to="/#">
-                        <i className="feather ft-mail"></i>
-                        <span>Email</span>
-                      </Link>
-                      <ul className="submenu">
-                        <li>
-                          <Link to="inbox">
-                            <i className="ion-ios-folder-outline"></i>
-                            <span>Inbox</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="compose">
-                            <i className="ti-pencil-alt"></i>
-                            <span>Compose Email</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="read-mail">
-                            <i className="ti-bookmark-alt"></i>
-                            <span>Read Email</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <Link to="gallery">
-                        <i className="feather ft-image"></i>
-                        <span>Gallery</span>
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link to="/#">
-                        <i className="feather ft-users"></i>
-                        <span>Session</span>
-                      </Link>
-                      <ul className="submenu">
-                        <li>
-                          <Link to="login">
-                            <i className="feather ft-log-in"></i>
-                            <span>Login</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="register">
-                            <i className="ion-person-add"></i>
-                            <span>Register</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="lock">
-                            <i className="ti-lock"></i>
-                            <span>Lock Screen</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="reset-password">
-                            <i className="feather ft-lock"></i>
-                            <span>Reset Password</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="forget-password">
-                            <i className="ti-bookmark-alt"></i>
-                            <span>Forgot Password</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <Link to="/#">
-                        <i className="feather ft-anchor"></i>
-                        <span>Error Pages</span>
-                      </Link>
-                      <ul className="submenu">
-                        <li>
-                          <Link to="404">
-                            <i className="ti-unlink"></i>
-                            <span>404</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="500">
-                            <i className="ti-close"></i>
-                            <span>500</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="505">
-                            <i className="ti-na"></i>
-                            <span>505</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <Link to="/#">
-                        <i className="feather ft-file-plus"></i>
-                        <span>Other Pages</span>
-                      </Link>
-
-                      <ul className="submenu">
-                        <li>
-                          <Link to="blank">
-                            <i className="feather ft-file"></i>
-                            <span>Blank Page</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="invoice">
-                            <i className="feather ft-paperclip"></i>
-                            <span>Invoice</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="pricing">
-                            <i className="feather ft-dollar-sign"></i>
-                            <span>Pricing</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="timeline">
-                            <i className="feather ft-clock"></i>
-                            <span>Timeline</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                  </li>
                 </nav>
               </div>
             </div>

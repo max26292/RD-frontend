@@ -4,14 +4,15 @@ import { AvForm, AvField } from 'availity-reactstrap-validation';
 import qs from 'qs';
 import { isEmpty } from 'lodash';
 import { Redirect } from 'react-router-dom';
-import './scss/loginPage.scss';
 import { AnyARecord } from 'dns';
+import { checkLogin } from '../../../store/actions';
+
 
 interface LoginInfo {
   username: string;
   password: string | number;
 }
-export const LoginPage = props => {
+export default function LoginPage (props) {
   const requestParams: LoginInfo = qs.parse(props.location.search, {
     ignoreQueryPrefix: true,
   });
@@ -36,6 +37,9 @@ export const LoginPage = props => {
     console.debug('in redirect ', { props }, { requestParams });
     return <Redirect to="/dashboard" />;
   }
+
+
+  
   return (
     <React.Fragment>
       <div className="wrapper">
@@ -58,8 +62,8 @@ export const LoginPage = props => {
                   console.debug('invalid', data);
                 }}
               >
-                <div className="login-form-body">
-                  {/* {this.props.user && (
+               <div className="login-form-body">
+                {/* {this.props.user && (
                     <Alert color="success">Your Login is successfull.</Alert>
                   )}
 
@@ -97,14 +101,7 @@ export const LoginPage = props => {
                     >
                       Log In <i className="ti-arrow-right"></i>
                     </Button>
-                    {/* <div className="login-other row mt-4">
-                                                <Col sm="6">
-                                                    <button className="fb-login"><span className="login_txt">Log in with</span>  <i className="fa fa-facebook"></i></button>
-                                                </Col>
-                                                <Col sm="6">
-                                                    <button className="google-login"><span className="login_txt">Log in with</span>  <i className="fa fa-google"></i></button>
-                                                </Col>
-                                            </div> */}
+                 
                   </div>
                   {/* <div className="form-footer text-center mt-5">
                                             <p className="text-muted">Don't have Account? <Link to="/register"><i className="mdi mdi-lock"></i> Register Now</Link></p>

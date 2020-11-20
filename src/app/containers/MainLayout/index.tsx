@@ -15,7 +15,7 @@ import { mainLayoutSaga } from './saga';
 import Navbar from '../../components/Navbar';
 import { Sidebar } from 'app/components/Sidebar';
 
-interface Props {}
+interface Props { }
 
 export function MainLayout(props: Props) {
   useInjectReducer({ key: sliceKey, reducer: reducer });
