@@ -6,6 +6,7 @@ import { AuthorizeContainerState } from 'app/containers/AuthorizeContainer/types
   You have to declare them here manually
 */
 export interface RootState {
+  mainLayout: import("d:/Reactjs/KakaloseQ/src/app/containers/MainLayout/types").MainLayoutState;
   authorizeContainer?: AuthorizeContainerState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

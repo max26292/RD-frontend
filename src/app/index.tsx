@@ -12,10 +12,14 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 import 'styles/scss/App.scss';
-import { HomePage } from './containers/HomePage/Loadable';
+// import { HomePage } from './containers/HomePage/Loadable';
+import { MainLayout } from 'app/containers/MainLayout';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
 import { LoginForm } from 'app/components/LoginForm';
+
+// import {Navbar} from './components/Navbar';
+
 export function App() {
   return (
     <BrowserRouter>
@@ -27,16 +31,18 @@ export function App() {
       </Helmet>
 
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/dashboard" component={HomePage} />
-        <Route
+        <Route exact path="/" component={LoginForm} />
+        <Route exact path="/dashboard" component={MainLayout} />
+
+        {/* <Route
           path="/auth"
           render={({ match: { url } }) => (
             <AuthorizeContainer>
               <Route path={`${url}/login`} component={LoginForm} />
             </AuthorizeContainer>
           )}
-        />
+        /> */}
+
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

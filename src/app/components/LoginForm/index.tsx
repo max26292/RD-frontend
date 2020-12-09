@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import styled from 'styled-components/macro';
-import { LoginPage } from './LoginPage';
+import  {LoginPage}  from './LoginPage';
 interface Props {}
 
 export function LoginForm(props: Props) {
