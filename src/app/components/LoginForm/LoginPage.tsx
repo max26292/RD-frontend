@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -13,6 +14,7 @@ import qs from 'qs';
 import { isEmpty } from 'lodash'; //thư viện JavaScript mạnh mẽ dùng để xử lý Array, Object, Function, Collection ..v.v
 import { Redirect } from 'react-router-dom';
 import { AnyARecord } from 'dns';
+import { MainLayout } from 'app/containers/MainLayout';
 
 // import { checkLogin } from '../../../store/actions';
 
@@ -20,6 +22,7 @@ import { AnyARecord } from 'dns';
 interface LoginInfo {
   username: string;
   password: string | number;
+  href?: string;
 }
 export function LoginPage(props) {
   const requestParams: LoginInfo = qs.parse(props.location.search, {
@@ -28,6 +31,7 @@ export function LoginPage(props) {
   const [{ username, password }, setCredentials] = useState<LoginInfo>({
     username: '',
     password: '',
+    href: '',
   });
 
   const login = (event: React.FormEvent, value: any) => {
@@ -98,14 +102,13 @@ export function LoginPage(props) {
                   </div>
 
                   <div className="submit-btn-area">
-                    <Button
+                    <a 
+                      type="submit"
                       color="primary"
                       className="btn btn-primary"
-                      type="submit"
-                    
-                    >
-                      Log In <i className="ti-arrow-right"></i>
-                    </Button>
+                      href = "dashboard"
+                    > Login 
+                    </a>
                   </div>
                   {/* <div className="form-footer text-center mt-5">
                                             <p className="text-muted">Don't have Account? <Link to="/register"><i className="mdi mdi-lock"></i> Register Now</Link></p>

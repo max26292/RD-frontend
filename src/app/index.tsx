@@ -1,12 +1,14 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  *
- * App
+ * App.tsx
  *
  * This component is the skeleton around the actual pages, and should only
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import * as React from 'react';
+import  React, {useState} from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
@@ -16,11 +18,12 @@ import 'styles/scss/App.scss';
 import { MainLayout } from 'app/containers/MainLayout';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
-import { LoginForm } from 'app/components/LoginForm';
+import {LoginForm} from './components/LoginForm'
 
 // import {Navbar} from './components/Navbar';
 
 export function App() {
+
   return (
     <BrowserRouter>
       <Helmet
