@@ -1,11 +1,16 @@
+/* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 //Metismenu
-import MetisMenu from 'metismenujs';
+import MetisMenu from '../../../../node_modules/metismenujs';
+
+
+// import './styles.scss'
+
 
 export class Sidebar extends Component {
-  readonly location: string;
+   location: string;
 
   constructor(props, location: string) {
     super(props);
@@ -60,95 +65,40 @@ export class Sidebar extends Component {
       <React.Fragment>
         <div className="left side-menu">
           <div className="sidebar-menu">
-            <div className="sidebar-header"></div>
-            <div className="main-menu">
+            {/* <div className="sidebar-header"></div> */}
+            {/* <div className="main-menu"> */}
               <div className="menu-inner" id="sidebar_menu">
                 <nav>
                   <li className="metismenu" id="menu">
-
                     <li>
                       <Link to="/#">
-                        <i className=""></i>
+                        <i className="feather ft-home"></i>
                         <span>Declare Categories</span>
                       </Link>
 
                       <ul className="submenu">
                         <li>
                           <Link to="alert">
-                            <i className="ti-alert"></i>
-                            <span>Alert</span>
+                            <i className="feather ft-briefcase" ></i>
+                            <span>Declare the list of warehouse</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="buttons">
-                            <i className="icon-focus"></i>
-                            <span>Buttons</span>
+                            <i className="feather ft-briefcase"></i>
+                            <span>Declare the account categories</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="badges">
-                            <i className="icon-ribbon"></i>
-                            <span>Badges</span>
+                            <i className="feather ft-briefcase"></i>
+                            <span>Declare the list of cases</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="cards">
-                            <i className="ti-id-badge"></i>
-                            <span>Cards</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="carousel">
-                            <i className="ti-layout-slider"></i>
-                            <span>Carousels</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="dropdown">
-                            <i className="icon-layers"></i>
-                            <span>Dropdown</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="list-group">
-                            <i className="ti-list"></i>
-                            <span>List Group</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="modals">
-                            <i className="ti-layers-alt"></i>
-                            <span>Modals</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="pagination">
-                            <i className="ion-android-more-horizontal"></i>
-                            <span>Pagination</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="progressbar">
-                            <i className="ion-ios-settings-strong"></i>
-                            <span>Progressbar</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="tabs">
-                            <i className="ti-layout-tab"></i>
-                            <span>Tabs</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="typography">
-                            <i className="ti-smallcap"></i>
-                            <span>Typography</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="grid">
-                            <i className="ti-layout-grid4"></i>
-                            <span>Grid</span>
+                            <i className="feather ft-briefcase"></i>
+                            <span>Declare types of accounting documents</span>
                           </Link>
                         </li>
                       </ul>
@@ -157,114 +107,43 @@ export class Sidebar extends Component {
                     <li>
                       <Link to="/#">
                         <i className=""></i>
-                        <span>The List of warehouse</span>
+                        <span>Document Arising</span>
                       </Link>
                       <ul className="submenu">
                         <li>
                           <Link to="sweet-alert">
                             <i className="ti-layout-media-overlay-alt-2"></i>{' '}
-                            <span>Sweet Alert</span>
+                            <span>Enter the generated vouchers</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="cropper">
                             <i className="ion-crop"></i>{' '}
-                            <span>Image Cropper</span>
+                            <span>Declaration of automatic entry of documents</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="dropzone">
                             <i className="ti-layout-placeholder"></i>{' '}
-                            <span>Dropzone</span>
+                            <span>Calculate and update the export price of materials and goods</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="loaders">
                             <i className="ion-load-a"></i>{' '}
-                            <span>Css Loaders</span>
+                            <span>Carry over the closing balance and other allocations</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="ladda-button">
                             <i className="ion-load-b"></i>{' '}
-                            <span>Ladda Button</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <Link to="/#">
-                        <i className=""></i>
-                        <span>
-                          Declare account Categories
-                        </span>
-                      </Link>
-                      <ul className="submenu">
-                        <li>
-                          <Link to="font-awesome">
-                            <i className="ti-flag-alt"></i>{' '}
-                            <span>Font Awesome</span>
+                            <span>Check and import documents to be duplicated</span>
                           </Link>
                         </li>
                         <li>
-                          <Link to="themify">
-                            <i className=""></i>
-                            <span>Declare the list of cases</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="ionicons">
-                            <i className="ion-ionic"></i>
-                            <span>Ionicons V2</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="et-line">
-                            <i className="icon-basket"></i>
-                            <span>ET Line Icons</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <Link to="/#">
-                        <i className=""></i>
-                        <span> Accounting documents</span>
-                      </Link>
-                      <ul className="submenu">
-                        <li>
-                          <Link to="google-maps">
-                            <i className="icon-map"></i>
-                            <span>Google Maps</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="vector-maps">
-                            <i className="icon-map-pin"></i>
-                            <span>Vector Maps</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <Link to="/#">
-                        <i className=""></i>
-                        <span>Documents Arising</span>
-                      </Link>
-                      <ul className="submenu">
-                        <li>
-                          <Link to="basic-table">
-                            <i className="ion-ios-grid-view"></i>
-                            <span>Basic Tables</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="datatable">
-                            <i className="ti-layout-slider-alt"></i>
-                            <span>Datatable</span>
+                          <Link to="ladda-button">
+                            <i className="ion-load-b"></i>{' '}
+                            <span>search and list the generated documents selectively</span>
                           </Link>
                         </li>
                       </ul>
@@ -277,21 +156,27 @@ export class Sidebar extends Component {
                       </Link>
                       <ul className="submenu">
                         <li>
-                          <Link to="form-basic">
-                            <i className="ion-edit"></i>
-                            <span>Basic ELements</span>
+                          <Link to="font-awesome">
+                            <i className="ti-flag-alt"></i>{' '}
+                            <span>Reporting System</span>
                           </Link>
                         </li>
                         <li>
-                          <Link to="form-layouts">
-                            <i className="ti-layout-grid2-thumb"></i>
-                            <span>Form Layouts</span>
+                          <Link to="themify">
+                            <i className=""></i>
+                            <span>Quickly view any detailed book data</span>
                           </Link>
                         </li>
                         <li>
-                          <Link to="form-groups">
-                            <i className="ion-ios-paper"></i>
-                            <span>Input Groups</span>
+                          <Link to="ionicons">
+                            <i className="ion-ionic"></i>
+                            <span>Quick view of T-letter synthesis of accounts</span>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="et-line">
+                            <i className="icon-basket"></i>
+                            <span>Quick view of account exchange balance</span>
                           </Link>
                         </li>
                       </ul>
@@ -299,7 +184,7 @@ export class Sidebar extends Component {
                   </li>
                 </nav>
               </div>
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </React.Fragment>
