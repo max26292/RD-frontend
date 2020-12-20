@@ -18,9 +18,11 @@ import Navbar from '../../components/Navbar';
 import { Sidebar } from 'app/components/Sidebar';
 
 
-interface Props {}
+interface Props { }
 
-export function MainLayout(props: Props) {
+export function MainLayout(props: any) {
+  console.debug('%c MainLayout','background: #222; color: #bada55')
+  console.debug({props});
   useInjectReducer({ key: sliceKey, reducer: reducer });
   useInjectSaga({ key: sliceKey, saga: mainLayoutSaga });
 
@@ -41,7 +43,7 @@ export function MainLayout(props: Props) {
         >
           <Navbar />
           <div className="main-content-inner">
-            xxxx
+            {props.children}
           </div>
         </div>
       </div>

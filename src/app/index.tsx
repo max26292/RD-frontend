@@ -8,7 +8,7 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import  React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
@@ -18,10 +18,11 @@ import 'styles/scss/App.scss';
 import { MainLayout } from 'app/containers/MainLayout';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
-import {LoginForm} from './components/LoginForm'
+import { LoginForm } from './components/LoginForm'
 import DeclareListofWarehouse from './containers/DeclareListofWarehouse'
-import {ListWarehouse} from './containers/ListWarehouse/Loadable'
+import { ListWarehouse } from './containers/ListWarehouse/Loadable'
 import { InitialDeclaration } from './containers/InitialDeclaration/Loadable';
+import { RouteList } from './routes';
 // import Register from './components/LoginForm/Register';
 // import {Navbar} from './components/Navbar';
 
@@ -36,9 +37,17 @@ export function App() {
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
 
-      {/* <Switch>
-        <Route exact path="/" component={LoginForm} />
-        <Route exact path="/dashboard" component={MainLayout} /> 
+      <Switch>
+        {/* <Route exact path="/" component={LoginForm} /> */}
+        {/* <Route path="/" component={MainLayout} /> */}
+        <Route
+          path='/'
+          render={(props) => <MainLayout {...props}>
+            <RouteList {...props} />
+          </MainLayout>}
+        >
+
+        </Route>
         <Route
           path="/auth"
           render={({ match: { url } }) => (
@@ -46,15 +55,15 @@ export function App() {
               <Route path={`${url}/login`} component={LoginForm} />
             </AuthorizeContainer>
           )}
-        /> 
+        />
 
         <Route component={NotFoundPage} />
-      </Switch> */}
+      </Switch>
       <GlobalStyle />
       {/* <Route component={ListWarehouse} /> */}
 
-      <Route component={InitialDeclaration} />
-      
+      {/* <Route component={InitialDeclaration} /> */}
+
     </BrowserRouter>
   );
 }
