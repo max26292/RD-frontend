@@ -43,26 +43,9 @@ return (
   <Helmet>
     <title>InitialDeclaration</title>
     <meta name="description" content="Description of InitialDeclaration" />
-  </Helmet>
-  <Div>
-      {t('')}
-    </Div>
+  </Helmet>  
 
-    <div className="page-container">
-        <Sidebar />
-        <div
-          className={
-            pathname === 'blank' ? 'is_blank_page main-content' : 'main-content'
-          }
-          id="main_content_sec"
-        >
-          <Navbar />
-          <TableInitialDeclaration />
-          <div className="main-content-inner">
-              
-          </div>
-        </div>
-      </div>
+  <TableInitialDeclaration />
 </>
 );
 

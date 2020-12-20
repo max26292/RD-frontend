@@ -27,7 +27,6 @@ import { RouteList } from './routes';
 // import {Navbar} from './components/Navbar';
 
 export function App() {
-
   return (
     <BrowserRouter>
       <Helmet
@@ -37,28 +36,32 @@ export function App() {
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
 
-      <Switch>
-        {/* <Route exact path="/" component={LoginForm} /> */}
-        {/* <Route path="/" component={MainLayout} /> */}
+      <>
         <Route
           path='/'
           render={(props) => <MainLayout {...props}>
             <RouteList {...props} />
           </MainLayout>}
         >
-
         </Route>
+
+             
         <Route
-          path="/auth"
-          render={({ match: { url } }) => (
+          path="/auth"          
+          render={({ match: { url } }) => {
+            console.debug('next path',url);
+            return(          
             <AuthorizeContainer>
-              <Route path={`${url}/login`} component={LoginForm} />
-            </AuthorizeContainer>
-          )}
+              <Switch>
+              <Route exact path={`${url}/login`} component={LoginForm} />
+              </Switch>
+              
+            </AuthorizeContainer> 
+          )}}
         />
 
-        <Route component={NotFoundPage} />
-      </Switch>
+        {/* <Route component={NotFoundPage} /> */}
+      </>
       <GlobalStyle />
       {/* <Route component={ListWarehouse} /> */}
 
