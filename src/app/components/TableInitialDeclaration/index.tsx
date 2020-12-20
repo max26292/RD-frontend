@@ -7,9 +7,9 @@ import { activateAuthLayout } from '../../../store/actions';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { MDBDataTable } from 'mdbreact';
-
+import { DataType } from 'app/containers/InitialDeclaration/types';
 interface Props {
-    activeAuthLayout: boolean;
+    activeAuthLayout?: boolean;
 }
 
 interface State {
@@ -18,11 +18,15 @@ interface State {
 }
 
 class DataTable extends React.Component <Props,State> {
-    constructor(props) {
+    private tableDate: DataType;
+    constructor(props:Props) {
         super(props);
         this.state = {
             checked: false
         };
+
+        
+
         console.log(this.props);
     }
 
@@ -33,7 +37,7 @@ class DataTable extends React.Component <Props,State> {
     
 
     render() {
-        const data = {
+        this.tableDate = {
             columns: [
                 {
                     label: 'Name of Business',

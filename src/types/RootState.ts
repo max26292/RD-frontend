@@ -2,6 +2,7 @@
 import { AuthorizeContainerState } from 'app/containers/AuthorizeContainer/types';
 import { InitialDeclarationState } from 'app/containers/InitialDeclaration/types';
 import { ListWarehouseState } from 'app/containers/ListWarehouse/types';
+import { MainLayoutState } from 'app/containers/MainLayout/types';
 
 // import { listWarehouseState } from 'app/containers/ListWarehouseState/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
@@ -12,7 +13,7 @@ import { ListWarehouseState } from 'app/containers/ListWarehouse/types';
 */
 export interface RootState {
   initialDeclaration: InitialDeclarationState;
-  mainLayout: import("d:/Reactjs/KakaloseQ/src/app/containers/MainLayout/types").MainLayoutState;
+  mainLayout: MainLayoutState;
   authorizeContainer?: AuthorizeContainerState;
   listWarehouse?: ListWarehouseState;
   innitialDeclaration?: InitialDeclarationState;
