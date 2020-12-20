@@ -17,7 +17,7 @@ import { AnyARecord } from 'dns';
 import { MainLayout } from 'app/containers/MainLayout';
 
 // import { checkLogin } from '../../../store/actions';
-
+import "./scss/loginPage.scss";
 
 interface LoginInfo {
   username: string;

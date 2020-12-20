@@ -5,8 +5,12 @@ import { Link, withRouter } from 'react-router-dom';
 //Metismenu
 import MetisMenu from '../../../../node_modules/metismenujs';
 
+// const content = [
+//   {
 
-// import './styles.scss'
+//   }
+// ]
+
 
 
 export class Sidebar extends Component {
@@ -72,32 +76,32 @@ export class Sidebar extends Component {
                   <li className="metismenu" id="menu">
                     <li>
                       <Link to="/#">
-                        <i className="feather ft-home"></i>
+                        <i className="ti-server"></i>
                         <span>Declare Categories</span>
                       </Link>
 
                       <ul className="submenu">
                         <li>
                           <Link to="alert">
-                            <i className="feather ft-briefcase" ></i>
+                            <i className="ti-server" ></i>
                             <span>Declare the list of warehouse</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="buttons">
-                            <i className="feather ft-briefcase"></i>
+                            <i className="ti-server"></i>
                             <span>Declare the account categories</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="badges">
-                            <i className="feather ft-briefcase"></i>
+                            <i className="ti-server"></i>
                             <span>Declare the list of cases</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="cards">
-                            <i className="feather ft-briefcase"></i>
+                            <i className="ti-server"></i>
                             <span>Declare types of accounting documents</span>
                           </Link>
                         </li>
@@ -106,43 +110,43 @@ export class Sidebar extends Component {
 
                     <li>
                       <Link to="/#">
-                        <i className=""></i>
+                        <i className="ti-server"></i>
                         <span>Document Arising</span>
                       </Link>
                       <ul className="submenu">
                         <li>
                           <Link to="sweet-alert">
-                            <i className="ti-layout-media-overlay-alt-2"></i>{' '}
+                            <i className="ti-server"></i>{' '}
                             <span>Enter the generated vouchers</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="cropper">
-                            <i className="ion-crop"></i>{' '}
+                            <i className="ti-server"></i>{' '}
                             <span>Declaration of automatic entry of documents</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="dropzone">
-                            <i className="ti-layout-placeholder"></i>{' '}
+                            <i className="ti-server"></i>{' '}
                             <span>Calculate and update the export price of materials and goods</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="loaders">
-                            <i className="ion-load-a"></i>{' '}
+                            <i className="ti-server"></i>{' '}
                             <span>Carry over the closing balance and other allocations</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="ladda-button">
-                            <i className="ion-load-b"></i>{' '}
+                            <i className="ti-server"></i>{' '}
                             <span>Check and import documents to be duplicated</span>
                           </Link>
                         </li>
                         <li>
                           <Link to="ladda-button">
-                            <i className="ion-load-b"></i>{' '}
+                            <i className="ti-server"></i>{' '}
                             <span>search and list the generated documents selectively</span>
                           </Link>
                         </li>
@@ -151,7 +155,7 @@ export class Sidebar extends Component {
 
                     <li>
                       <Link to="/#">
-                        <i className=""></i>
+                        <i className="ti-help"></i>
                         <span>Reporting System</span>
                       </Link>
                       <ul className="submenu">
@@ -163,7 +167,7 @@ export class Sidebar extends Component {
                         </li>
                         <li>
                           <Link to="themify">
-                            <i className=""></i>
+                            <i className="ti-server"></i>
                             <span>Quickly view any detailed book data</span>
                           </Link>
                         </li>
@@ -175,7 +179,7 @@ export class Sidebar extends Component {
                         </li>
                         <li>
                           <Link to="et-line">
-                            <i className="icon-basket"></i>
+                            <i className="ti-exchange-vertical"></i>
                             <span>Quick view of account exchange balance</span>
                           </Link>
                         </li>

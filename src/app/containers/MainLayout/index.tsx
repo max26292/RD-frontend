@@ -13,8 +13,10 @@ import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
 import { selectMainLayout } from './selectors';
 import { mainLayoutSaga } from './saga';
+
 import Navbar from '../../components/Navbar';
 import { Sidebar } from 'app/components/Sidebar';
+
 
 interface Props {}
 
@@ -38,11 +40,13 @@ export function MainLayout(props: Props) {
           id="main_content_sec"
         >
           <Navbar />
-          <div className="main-content-inner">xxx</div>
+          <div className="main-content-inner">
+            xxxx
+          </div>
         </div>
       </div>
     </>
   );
 }
 
-const Div = styled.div``;
+const Div = styled.div``; 

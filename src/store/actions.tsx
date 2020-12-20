@@ -1,2 +1,6 @@
 /* eslint-disable prettier/prettier */
-export * from '../app/components/LoginForm/actions';
+export * from './layout/actions';
+//============ Auth Actions =============*
+// export * from './auth/register/actions';
+export * from './auth/login/actions';
+// export * from './auth/forgetpwd/actions';

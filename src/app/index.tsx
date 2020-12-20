@@ -19,7 +19,10 @@ import { MainLayout } from 'app/containers/MainLayout';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
 import {LoginForm} from './components/LoginForm'
-
+import DeclareListofWarehouse from './containers/DeclareListofWarehouse'
+import {ListWarehouse} from './containers/ListWarehouse/Loadable'
+import { InitialDeclaration } from './containers/InitialDeclaration/Loadable';
+// import Register from './components/LoginForm/Register';
 // import {Navbar} from './components/Navbar';
 
 export function App() {
@@ -33,22 +36,25 @@ export function App() {
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
 
-      <Switch>
+      {/* <Switch>
         <Route exact path="/" component={LoginForm} />
-        <Route exact path="/dashboard" component={MainLayout} />
-
-        {/* <Route
+        <Route exact path="/dashboard" component={MainLayout} /> 
+        <Route
           path="/auth"
           render={({ match: { url } }) => (
             <AuthorizeContainer>
               <Route path={`${url}/login`} component={LoginForm} />
             </AuthorizeContainer>
           )}
-        /> */}
+        /> 
 
         <Route component={NotFoundPage} />
-      </Switch>
+      </Switch> */}
       <GlobalStyle />
+      {/* <Route component={ListWarehouse} /> */}
+
+      <Route component={InitialDeclaration} />
+      
     </BrowserRouter>
   );
 }
