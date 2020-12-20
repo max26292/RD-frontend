@@ -106,7 +106,7 @@ export function LoginPage(props) {
                       type="submit"
                       color="primary"
                       className="btn btn-primary"
-                      href = "dashboard"
+                      href = "/dashboard"
                     > Login 
                     </a>
                   </div>

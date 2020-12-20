@@ -59,7 +59,7 @@ export function App() {
             </AuthorizeContainer> 
           )}}
         />
-
+          <Route exact path='/404' component={NotFoundPage} />
         {/* <Route component={NotFoundPage} /> */}
       </>
       <GlobalStyle />
