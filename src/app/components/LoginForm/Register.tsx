@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { Alert, Button, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import { registerUser, emptyError } from '../../store/actions';
+// import { registerUser, emptyError } from '../../../store/actions';
 // import Logo from '../../assets/images/logo-login.svg';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 
@@ -99,7 +99,7 @@ class Pagesregister extends React.Component<Props,State> {
                                             </div>
                                         </div>
                                         <div className="form-footer text-center mt-5">
-                                            <p className="text-muted">Have an Account? <Link to="/login"><i className="mdi mdi-lock"></i> Login Now</Link></p>
+                                            <p className="text-muted">Have an Account? <Link to="/auth/login"><i className="mdi mdi-lock"></i> Login Now</Link></p>
                                         </div>
                                     </div>
                                 </AvForm>

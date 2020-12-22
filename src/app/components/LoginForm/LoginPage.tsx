@@ -110,9 +110,9 @@ export function LoginPage(props) {
                     > Login 
                     </a>
                   </div>
-                  {/* <div className="form-footer text-center mt-5">
-                                            <p className="text-muted">Don't have Account? <Link to="/register"><i className="mdi mdi-lock"></i> Register Now</Link></p>
-                                        </div> */}
+                  <div className="form-footer text-center mt-5">
+                                            <p className="text-muted">Don't have Account? <Link to="/auth/register"><i className="mdi mdi-lock"></i> Register Now </Link></p>
+                                        </div>
                 </div>
               </AvForm>
             </div>

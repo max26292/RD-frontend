@@ -54,6 +54,7 @@ export function App() {
             <AuthorizeContainer>
               <Switch>
               <Route exact path={`${url}/login`} component={LoginForm} />
+              <Route exact path={`${url}/register`} component={LoginForm} />
               </Switch>
               
             </AuthorizeContainer> 

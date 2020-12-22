@@ -34,7 +34,7 @@ export function MainLayout (props: any) : any {
   const dispatch = useDispatch();
   const { location } = props;
   let pathname = window.location.pathname.replace('/', '');
-  const errorPage = ['/404', '/401', '/403', '/423', '/500', '/auth/login','/auth', '/sso'];
+  const errorPage = ['/404', '/401', '/403', '/423', '/500', '/auth/login','/auth/register','/auth', '/sso'];
   if (errorPage.indexOf(location.pathname) >= 0) {
     console.debug('trigger 404 AppContainer');
     return false;

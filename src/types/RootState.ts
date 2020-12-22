@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { AuthorizeContainerState } from 'app/containers/AuthorizeContainer/types';
+import { DataDeclarationState } from 'app/containers/DataDeclaration/types';
 import { InitialDeclarationState } from 'app/containers/InitialDeclaration/types';
 import { ListWarehouseState } from 'app/containers/ListWarehouse/types';
 import { MainLayoutState } from 'app/containers/MainLayout/types';
@@ -17,5 +18,6 @@ export interface RootState {
   authorizeContainer?: AuthorizeContainerState;
   listWarehouse?: ListWarehouseState;
   innitialDeclaration?: InitialDeclarationState;
+  dataDeclaration?: DataDeclarationState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }
