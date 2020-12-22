@@ -49,7 +49,6 @@ export function App() {
         <Route
           path="/auth"          
           render={({ match: { url } }) => {
-            console.debug('next path',url);
             return(          
             <AuthorizeContainer>
               <Switch>

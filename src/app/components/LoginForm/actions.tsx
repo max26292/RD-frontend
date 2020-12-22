@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { CHECK_LOGIN, LOGIN_USER_SUCCESSFUL, API_FAILED, CHECK_OTP, VALIDATE_OTP_SUCCESS, VALIDATE_OTP_ERROR } from './actionTypes';
+import { CHECK_LOGIN, LOGIN_USER_SUCCESSFUL, API_FAILED, CHECK_OTP, VALIDATE_OTP_SUCCESS, VALIDATE_OTP_ERROR, REGISTER } from './actionTypes';
 
 export const checkLogin = (email, password, history) => {
     return {
@@ -42,5 +42,12 @@ export const apiError = (error) => {
     return {
         type: API_FAILED,
         payload: error
+    }
+}
+
+export const registerUser = (email, password, history) => {
+    return {
+        type: REGISTER,
+        payload: { email, password, history }
     }
 }

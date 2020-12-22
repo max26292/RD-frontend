@@ -5,17 +5,16 @@
  *
  */
 
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import styled from 'styled-components/macro';
-
-import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
-import { reducer, sliceKey } from './slice';
-import { selectMainLayout } from './selectors';
-import { mainLayoutSaga } from './saga';
-
-import Navbar from '../../components/Navbar';
 import { Sidebar } from 'app/components/Sidebar';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
+import Navbar from '../../components/Navbar';
+import { mainLayoutSaga } from './saga';
+import { selectMainLayout } from './selectors';
+import { reducer, sliceKey } from './slice';
+
+
 
 
 
@@ -23,8 +22,6 @@ interface Props {
   children: React.ReactChild
 }
 export function MainLayout (props: any) : any {
-  console.debug('%c MainLayout', 'background: #222; color: #bada55')
-  console.debug({ props });
   useInjectReducer({ key: sliceKey, reducer: reducer });
   useInjectSaga({ key: sliceKey, saga: mainLayoutSaga });
 
@@ -61,4 +58,4 @@ export function MainLayout (props: any) : any {
   }
 }
 
-const Div = styled.div``; 
+

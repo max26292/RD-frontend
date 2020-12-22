@@ -25,7 +25,6 @@ export function AuthorizeContainer(props: Props) {
   const authorizeContainer = useSelector(selectAuthorizeContainer);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
-  console.debug(props);
   // cu phap mac dinh
   // const match = props.match;
   return (

@@ -3,13 +3,19 @@ import { createSlice } from 'utils/@reduxjs/toolkit';
 import { ContainerState } from './types';
 
 // The initial state of the AuthorizeContainer container
-export const initialState: ContainerState = {};
+export const initialState: ContainerState = {
+  user: '',
+  registrationError: false,
+  loading: false,
+};
 
 const authorizeContainerSlice = createSlice({
   name: 'authorizeContainer',
   initialState,
   reducers: {
-    someAction(state, action: PayloadAction<any>) {},
+    register(state, action: PayloadAction<any>) {
+      state.registrationError = !state.registrationError;
+    },
   },
 });
 
