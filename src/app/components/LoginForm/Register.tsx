@@ -62,7 +62,7 @@ class Pagesregister extends React.Component<Props, State> {
       <React.Fragment>
         <div className="wrapper">
           <div className="container-fluid">
-
+              
               {registrationError?'cho nay sai ':''}
             <Row>
               {/* <div className="login-bg">
@@ -73,8 +73,15 @@ class Pagesregister extends React.Component<Props, State> {
                                     <button className="btn btn-primary">Learn More</button>
                                 </div>
                             </div> */}
-
-              <div className="">
+               <div className="login-bg">
+              <div className="login-overlay"></div>
+              {/* <div className="login-left">
+                                    <img src={loginLogo} alt="Logo" />
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tellus elit.</p>
+                                    <button className="btn btn-primary">Learn More</button>
+                                </div> */}
+              </div>
+              <div className="login-form">
                 <AvForm
                   id="login_form_sec"
                   onValidSubmit={this.handleSubmit}
@@ -139,7 +146,7 @@ class Pagesregister extends React.Component<Props, State> {
                           Submit <i className="ti-arrow-right"></i>
                         </Button>
                       )}
-                      <div className="login-other row mt-4">
+                      {/* <div className="login-other row mt-4">
                         <Col sm="6">
                           <button className="fb-login">
                             <span className="login_txt">Log in with</span>{' '}
@@ -152,7 +159,7 @@ class Pagesregister extends React.Component<Props, State> {
                             <i className="fa fa-google"></i>
                           </button>
                         </Col>
-                      </div>
+                      </div> */}
                     </div>
                     <div className="form-footer text-center mt-5">
                       <p className="text-muted">
