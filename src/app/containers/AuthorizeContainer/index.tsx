@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  *
  * AuthorizeContainer
@@ -12,6 +13,9 @@ import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
 import { selectAuthorizeContainer } from './selectors';
 import { authorizeContainerSaga } from './saga';
+
+import axios from 'axios';
+
 interface Props {
   children?: React.ReactNode;
   match?: any;
@@ -27,6 +31,14 @@ export function AuthorizeContainer(props: Props) {
   const dispatch = useDispatch();
   // cu phap mac dinh
   // const match = props.match;
+
+  const login = () => {
+    return axios.post('/login');
+  };
+  const checkAuth = () => {
+    return axios.get('/user/check');
+  };
+
   return (
     <>
       <Helmet>

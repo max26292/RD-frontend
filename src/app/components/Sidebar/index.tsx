@@ -11,10 +11,8 @@ import MetisMenu from '../../../../node_modules/metismenujs';
 //   }
 // ]
 
-
-
 export class Sidebar extends Component {
-   location: string;
+  location: string;
 
   constructor(props, location: string) {
     super(props);
@@ -71,123 +69,148 @@ export class Sidebar extends Component {
           <div className="sidebar-menu">
             {/* <div className="sidebar-header"></div> */}
             {/* <div className="main-menu"> */}
-              <div className="menu-inner" id="sidebar_menu">
-                <nav>
-                  <li className="metismenu" id="menu">
-                    <li>
-                      <Link to="/#">
-                        <i className="ti-server"></i>
-                        <span>Declare Categories</span>
-                      </Link>
-
-                      <ul className="submenu">
-                        <li>
-                          <Link to="alert">
-                            <i className="ti-server" ></i>
-                            <span>Declare the list of warehouse</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="buttons">
-                            <i className="ti-server"></i>
-                            <span>Declare the account categories</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="badges">
-                            <i className="ti-server"></i>
-                            <span>Declare the list of cases</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="cards">
-                            <i className="ti-server"></i>
-                            <span>Declare types of accounting documents</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <Link to="/#">
-                        <i className="ti-server"></i>
-                        <span>Document Arising</span>
-                      </Link>
-                      <ul className="submenu">
-                        <li>
-                          <Link to="sweet-alert">
-                            <i className="ti-server"></i>{' '}
-                            <span>Enter the generated vouchers</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="cropper">
-                            <i className="ti-server"></i>{' '}
-                            <span>Declaration of automatic entry of documents</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="dropzone">
-                            <i className="ti-server"></i>{' '}
-                            <span>Calculate and update the export price of materials and goods</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="loaders">
-                            <i className="ti-server"></i>{' '}
-                            <span>Carry over the closing balance and other allocations</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="ladda-button">
-                            <i className="ti-server"></i>{' '}
-                            <span>Check and import documents to be duplicated</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="ladda-button">
-                            <i className="ti-server"></i>{' '}
-                            <span>search and list the generated documents selectively</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <Link to="/#">
-                        <i className="ti-help"></i>
-                        <span>Reporting System</span>
-                      </Link>
-                      <ul className="submenu">
-                        <li>
-                          <Link to="font-awesome">
-                            <i className="ti-flag-alt"></i>{' '}
-                            <span>Reporting System</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="themify">
-                            <i className="ti-server"></i>
-                            <span>Quickly view any detailed book data</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="ionicons">
-                            <i className="ion-ionic"></i>
-                            <span>Quick view of T-letter synthesis of accounts</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="et-line">
-                            <i className="ti-exchange-vertical"></i>
-                            <span>Quick view of account exchange balance</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
+            <div className="menu-inner" id="sidebar_menu">
+              <nav>
+                <li className="metismenu" id="menu">
+                  <li>
+                    <Link to="/data-declare">
+                      <i className="ti-server"></i>
+                      <span>Initial Declaration</span>
+                    </Link>
                   </li>
-                </nav>
-              </div>
+                  <li>
+                    <Link to="/year-table">
+                      <i className="ti-server"></i>
+                      <span>Year Starting</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/#">
+                      <i className="ti-server"></i>
+                      <span>Declare Categories</span>
+                    </Link>
+
+                    <ul className="submenu">
+                      <li>
+                        <Link to="/list-warehouse">
+                          <i className="ti-server"></i>
+                          <span>Declare the list of warehouse</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/list-accounts">
+                          <i className="ti-server"></i>
+                          <span>Declare the account categories</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/list-works">
+                          <i className="ti-server"></i>
+                          <span>Declare the list of cases</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/list-financialpaper">
+                          <i className="ti-server"></i>
+                          <span>Declare types of accounting documents</span>
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <Link to="/#">
+                      <i className="ti-server"></i>
+                      <span>Document Arising</span>
+                    </Link>
+                    <ul className="submenu">
+                      <li>
+                        <Link to="/generated-vouchers">
+                          <i className="ti-server"></i>{' '}
+                          <span>Enter the generated vouchers</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="cropper">
+                          <i className="ti-server"></i>{' '}
+                          <span>
+                            Declaration of automatic entry of documents
+                          </span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="dropzone">
+                          <i className="ti-server"></i>{' '}
+                          <span>
+                            Calculate and update the export price of materials
+                            and goods
+                          </span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="loaders">
+                          <i className="ti-server"></i>{' '}
+                          <span>
+                            Carry over the closing balance and other allocations
+                          </span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="ladda-button">
+                          <i className="ti-server"></i>{' '}
+                          <span>
+                            Check and import documents to be duplicated
+                          </span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="ladda-button">
+                          <i className="ti-server"></i>{' '}
+                          <span>
+                            search and list the generated documents selectively
+                          </span>
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <Link to="/#">
+                      <i className="ti-help"></i>
+                      <span>Reporting System</span>
+                    </Link>
+                    <ul className="submenu">
+                      <li>
+                        <Link to="font-awesome">
+                          <i className="ti-flag-alt"></i>{' '}
+                          <span>Reporting System</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="themify">
+                          <i className="ti-server"></i>
+                          <span>Quickly view any detailed book data</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="ionicons">
+                          <i className="ion-ionic"></i>
+                          <span>
+                            Quick view of T-letter synthesis of accounts
+                          </span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="et-line">
+                          <i className="ti-exchange-vertical"></i>
+                          <span>Quick view of account exchange balance</span>
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
+                </li>
+              </nav>
+            </div>
             {/* </div> */}
           </div>
         </div>

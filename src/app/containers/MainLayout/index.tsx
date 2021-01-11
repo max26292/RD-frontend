@@ -10,6 +10,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import Navbar from '../../components/Navbar';
+import { InitialDeclaration } from '../InitialDeclaration';
 import { mainLayoutSaga } from './saga';
 import { selectMainLayout } from './selectors';
 import { reducer, sliceKey } from './slice';
@@ -52,6 +53,8 @@ export function MainLayout (props: any) : any {
               {props.children}
             </div>
           </div>
+
+         
         </div>
       </>
     );

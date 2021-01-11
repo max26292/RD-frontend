@@ -43,8 +43,8 @@ return (
     <meta name="description" content="Description of DataDeclaration" />
   </Helmet>
   
-  {/* <TableOne /> */}
-    <TableTwo />
+  <TableOne />
+    {/* <TableTwo /> */}
 </>
 );
 

@@ -19,14 +19,30 @@ import { MainLayout } from 'app/containers/MainLayout';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
 import { LoginForm } from './components/LoginForm'
-import DeclareListofWarehouse from './containers/DeclareListofWarehouse'
+
 import { ListWarehouse } from './containers/ListWarehouse/Loadable'
 import { InitialDeclaration } from './containers/InitialDeclaration/Loadable';
 import { RouteList } from './routes';
 // import Register from './components/LoginForm/Register';
 // import {Navbar} from './components/Navbar';
 
-export function App() {
+import axios from 'axios'
+import login from 'store/auth/login/reducer.';
+
+
+export function App () {
+
+    const login = () => {
+      return axios.post('/login');
+    }
+    const checkAuth = () => { 
+      return axios.get('/user/check');
+    }
+
+
+
+
+
   return (
     <BrowserRouter>
       <Helmet
@@ -60,7 +76,7 @@ export function App() {
           )}}
         />
           <Route exact path='/404' component={NotFoundPage} />
-        {/* <Route component={NotFoundPage} /> */}
+      
       </>
       <GlobalStyle />
       {/* <Route component={ListWarehouse} /> */}

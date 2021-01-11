@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
 /**
  *
@@ -19,7 +20,9 @@ import { listWarehouseSaga } from './saga';
 import Navbar from '../../components/Navbar';
 import { Sidebar } from 'app/components/Sidebar';
 
-import "./styles.scss"
+import './styles.scss';
+
+import TableInitialDeclaration from 'app/components/TableInitialDeclaration';
 
 interface Props {}
 
@@ -42,22 +45,8 @@ export function ListWarehouse(props: Props) {
         <title>ListWarehouse</title>
         <meta name="description" content="Description of ListWarehouse" />
       </Helmet>
-      <Div>{t('')}</Div>
 
-      <div className="page-container">
-        <Sidebar />
-        <div
-          className={
-            pathname === 'blank' ? 'is_blank_page main-content' : 'main-content'
-          }
-          id="main_content_sec"
-        >
-          <Navbar />
-          <div className="main-content-inner">
-              xxx
-          </div>
-        </div>
-      </div>
+      <TableInitialDeclaration />
     </>
   );
 }
