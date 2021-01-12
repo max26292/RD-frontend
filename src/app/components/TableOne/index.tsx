@@ -463,53 +463,86 @@ class DataTable extends React.Component<Props, State> {
                   </TabPane>
                   <TabPane className="p-3 pl-0" tabId="11">
                     <div className="row">
-                      <div className="stretched_card mt-4 col-lg-6">
+                      <div className="stretched_card col-lg-4">
                         <div className="card">
                           <div className="card-body">
                             <h4 className="card-title">
                               {' '}
                               Số chữ số lẻ thập phân
                             </h4>
-                            <div className="pl-5">
-                          
-            
-                  <form className="form-inline">
-                    <div className="form-group">
-                      <label>Year: </label>
-                      <input
-                        type="number" // tăng số bằng mũi tên
-                        className="form-control mx-sm-3"
-                        aria-describedby="passwordHelpInline"
-                      />
 
-                      <button
-                        type="button"
-                        className="btn-fixed-w mr-2 btn btn-primary"
-                      >
-                        Xác Nhận
-                      </button>
+                            <div className="column">
+                              <form className="form-inline">
+                                {' '}
+                                fsdfasffsa
+                                <div className="form-group">
+                                  <input
+                                    type="number" // tăng số bằng mũi tên
+                                    className="form-control mx-sm-3"
+                                    aria-describedby="passwordHelpInline"
+                                  />
+                                </div>
+                              </form>
 
-                      <button
-                        type="button"
-                        className="btn-fixed-w mr-2 btn btn-primary"
-                      >
-                        Hủy Bỏ
-                      </button>
-                    </div>
-                  </form>
-           
+                              <form className="form-inline">
+                                {' '}
+                                fsadfasd
+                                <div className="form-group">
+                                  <input
+                                    type="number" // tăng số bằng mũi tên
+                                    className="form-control mx-sm-3"
+                                    aria-describedby="passwordHelpInline"
+                                  />
+                                </div>
+                              </form>
+
+                              <form className="form-inline">
+                                {' '}
+                                sdfasd
+                                <div className="form-group">
+                                  <input
+                                    type="number" // tăng số bằng mũi tên
+                                    className="form-control mx-sm-3"
+                                    aria-describedby="passwordHelpInline"
+                                  />
+                                </div>
+                              </form>
+
+                              <form className="form-inline">
+                                {' '}
+                                Number
+                                <div className="form-group">
+                                  <input
+                                    type="number" // tăng số bằng mũi tên
+                                    className="form-control mx-sm-3"
+                                    aria-describedby="passwordHelpInline"
+                                  />
+                                </div>
+                              </form>
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <div className="stretched_card mt-4 col-lg-6">
-                      <div className="card">
+                      <div className="stretched_card col-lg-4">
+                        <div className="card">
                           <div className="card-body">
-                            <h4 className="card-title">
-                              {' '}
-                              Dấu Phân Cách 
-                            </h4>
+                            <h4 className="card-title"> Dấu Phân Cách</h4>
+                            <div className="pl-5"></div>
+                            <div className="form-group">
+                              <input
+                                type="number" // tăng số bằng mũi tên
+                                className="form-control mx-sm-3"
+                                aria-describedby="passwordHelpInline"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="stretched_card col-lg-4">
+                        <div className="card">
+                          <div className="card-body">
+                            <h4 className="card-title"> Dấu Phân Cách</h4>
                             <div className="pl-5"></div>
                           </div>
                         </div>
@@ -534,6 +567,7 @@ class DataTable extends React.Component<Props, State> {
                         Delete
                       </Button>
                     </div>
+                    
                   </TabPane>
                 </TabContent>
               </CardBody>
