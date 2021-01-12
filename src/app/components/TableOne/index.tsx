@@ -1,6 +1,5 @@
 /* eslint-disable react/require-render-return */
 /* eslint-disable prettier/prettier */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { Component } from 'react';
 import {
   Row,
@@ -12,10 +11,8 @@ import {
   NavLink,
   TabContent,
   TabPane,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
+  Form,
+  FormGroup, Label, Input,
   Button,
 } from 'reactstrap';
 import { activateAuthLayout } from '../../../store/actions';
@@ -164,412 +161,437 @@ class DataTable extends React.Component<Props, State> {
                     </NavLink>
                   </NavItem>
                 </Nav>
-
+                <Form>
                 <TabContent activeTab={this.state.activeTab3}>
-                  <TabPane tabId="9" className="p-3 pl-0">
-                    <Row>
-                      <Col md="4">
-                        {' '}
-                        <h5>Name of Business:</h5>{' '}
-                      </Col>
-                      <Col md="8">
-                        {' '}
-                        <input
-                          type="text"
-                          placeholder="Name of Business"
-                        />{' '}
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md="4">
-                        {' '}
-                        <h5>Adress:</h5>{' '}
-                      </Col>
-                      <Col md="8">
-                        {' '}
-                        <input type="text" placeholder="Adress" />{' '}
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        {' '}
-                        <h5>Phone:</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="Phone Number" />
-                      </Col>
-                      <Col>
-                        <h5>Fax:</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="Fax" />{' '}
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        {' '}
-                        <h5>Tax ID:</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="Tax ID" />
-                      </Col>
-                      <Col>
-                        <h5>Email:</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="Email" />{' '}
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        {' '}
-                        <h5>Name of Director:</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="Name of Director" />
-                      </Col>
-                      <Col>
-                        <h5>-----</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="position" />{' '}
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        {' '}
-                        <h5>Name of Head of Accountant:</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="Name" />
-                      </Col>
-                      <Col>
-                        <h5>-----</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="position" />{' '}
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        {' '}
-                        <h5>Name of Material curator:</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="Name" />
-                      </Col>
-                      <Col>
-                        <h5>-----</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="position" />{' '}
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        {' '}
-                        <h5>Name of Inventory Manager:</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="Name" />
-                      </Col>
-                      <Col>
-                        <h5>Storekeepers:</h5>
-                      </Col>
-                      <Col>
-                        {' '}
-                        <input type="text" placeholder="Name" />{' '}
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md="8">
-                        {' '}
-                        <h5>
-                          Name of people who sign on behave of director:
-                        </h5>{' '}
-                      </Col>
-                      <Col md="4">
-                        {' '}
-                        <input type="text" placeholder="Name" />{' '}
-                      </Col>
-                    </Row>
-                    <div className="reply_btn pull-right mb-mob-3">
-                      <Button
-                        type="button"
-                        color="primary"
-                        className="btn-fixed-w mb-3 mr-2"
-                      >
-                        <i className="ion-ios-conform"></i>
-                        Conform
-                      </Button>
-                      <Button
-                        type="button"
-                        color="danger"
-                        className="btn-fixed-w mb-3 mr-2"
-                      >
-                        <i className="ion-ios-trash"></i>
-                        Delete
-                      </Button>
-                    </div>
-                  </TabPane>
+                  
+                    <TabPane tabId="9" className="p-3 pl-0">
+                      <Row>
+                        <Col md="4">
+                          {' '}
+                          <h5>Name of Business:</h5>{' '}
+                        </Col>
+                        <Col md="8">
+                          {' '}
+                          <input
+                            type="text"
+                            placeholder="Name of Business"
+                          />{' '}
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col md="4">
+                          {' '}
+                          <h5>Adress:</h5>{' '}
+                        </Col>
+                        <Col md="8">
+                          {' '}
+                          <input type="text" placeholder="Adress" />{' '}
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          {' '}
+                          <h5>Phone:</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="Phone Number" />
+                        </Col>
+                        <Col>
+                          <h5>Fax:</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="Fax" />{' '}
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          {' '}
+                          <h5>Tax ID:</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="Tax ID" />
+                        </Col>
+                        <Col>
+                          <h5>Email:</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="Email" />{' '}
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          {' '}
+                          <h5>Name of Director:</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="Name of Director" />
+                        </Col>
+                        <Col>
+                          <h5>-----</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="position" />{' '}
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          {' '}
+                          <h5>Name of Head of Accountant:</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="Name" />
+                        </Col>
+                        <Col>
+                          <h5>-----</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="position" />{' '}
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          {' '}
+                          <h5>Name of Material curator:</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="Name" />
+                        </Col>
+                        <Col>
+                          <h5>-----</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="position" />{' '}
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          {' '}
+                          <h5>Name of Inventory Manager:</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="Name" />
+                        </Col>
+                        <Col>
+                          <h5>Storekeepers:</h5>
+                        </Col>
+                        <Col>
+                          {' '}
+                          <input type="text" placeholder="Name" />{' '}
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col md="8">
+                          {' '}
+                          <h5>
+                            Name of people who sign on behave of director:
+                          </h5>{' '}
+                        </Col>
+                        <Col md="4">
+                          {' '}
+                          <input type="text" placeholder="Name" />{' '}
+                        </Col>
+                      </Row>
+                      <div className="reply_btn pull-right mb-mob-3">
+                        <Button
+                          type="button"
+                          color="primary"
+                          className="btn-fixed-w mb-3 mr-2"
+                        >
+                          <i className="ion-ios-conform"></i>
+                          Conform
+                        </Button>
+                        <Button
+                          type="button"
+                          color="danger"
+                          className="btn-fixed-w mb-3 mr-2"
+                        >
+                          <i className="ion-ios-trash"></i>
+                          Delete
+                        </Button>
+                      </div>
+                    </TabPane>
 
-                  <TabPane className="p-3 pl-0" tabId="10">
-                    <fieldset className="form-group">
+                    <TabPane className="p-3 pl-0" tabId="10">
+                      <fieldset className="form-group">
+                        <div className="row">
+                          <div className="stretched_card mt-4 col-lg-9">
+                            <div className="card">
+                              <div className="cardbody">
+                                <h4 className="card_title">
+                                  Hạch Toán theo chế độ kế toán
+                                </h4>
+                                <div className="pl-5">
+                                  <div>
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      name="gridRadios"
+                                      id="gridRadios1"
+                                      value="option1"
+                                      checked
+                                    />
+                                    <h5>
+                                      Thông tư 133/2016/TT-BTC(Thay thế QĐ
+                                      48...)
+                                    </h5>
+                                  </div>
+
+                                  <div>
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      name="gridRadios"
+                                      id="gridRadios2"
+                                      value="option2"
+                                    />
+                                    <h5>
+                                      Thông tư 200/2014/TT-BTC(Thay thế QĐ
+                                      15...)
+                                    </h5>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="stretched_card mt-4 col-lg-3">
+                            <div className="card">
+                              <div className="card_body">
+                                <h4 className="card_title">
+                                  Hình thức sổ sách
+                                </h4>
+                                <div className="pl-5">
+                                  <div>
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      name="gridRadios"
+                                      id="gridRadios1"
+                                      value="option1"
+                                      checked
+                                    />
+                                    <h5>Nhật ký chung</h5>
+                                  </div>
+
+                                  <div>
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      name="gridRadios"
+                                      id="gridRadios2"
+                                      value="option2"
+                                    />
+                                    <h5>Chứng từ ghi sổ</h5>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="row">
+                          <div className="stretched_card mt-4 col-lg-12">
+                            <div className="card">
+                              <div className="card_body">
+                                <h4 className="card_title">
+                                  Phương Pháp tính giá xuất kho
+                                </h4>
+                                <div className="pl-5">
+                                  <div>
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      name="gridRadios"
+                                      id="gridRadios1"
+                                      value="option1"
+                                      checked
+                                    />
+                                    <h5>
+                                      Giá bình quân gia quyền cuối kỳ ( tính đến
+                                      cuối bảng: mỗi tháng sẽ xuát kho cùng 1
+                                      giá)
+                                    </h5>
+                                  </div>
+
+                                  <div>
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      name="gridRadios"
+                                      id="gridRadios2"
+                                      value="option2"
+                                    />
+                                    <h5>
+                                      Giá bình quân gia quyền tại thời điểm xuất
+                                      kho ( thời điểm được tính đến cuối Ngày
+                                      Ghi Sổ)
+                                    </h5>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+
+                      <div className="reply_btn pull-right mb-mob-3">
+                        <Button
+                          type="button"
+                          color="primary"
+                          className="btn-fixed-w mb-3 mr-2"
+                        >
+                          <i className="ion-ios-conform"></i>
+                          Conform
+                        </Button>
+                        <Button
+                          type="button"
+                          color="danger"
+                          className="btn-fixed-w mb-3 mr-2"
+                        >
+                          <i className="ion-ios-trash"></i>
+                          Delete
+                        </Button>
+                      </div>
+                    </TabPane>
+                    <TabPane className="p-3 pl-0" tabId="11">
                       <div className="row">
-                        <div className="stretched_card mt-4 col-lg-9">
+                        <div className="stretched_card col-lg-4">
                           <div className="card">
-                            <div className="cardbody">
-                              <h4 className="card_title">
-                                Hạch Toán theo chế độ kế toán
+                              <h4 className="card-header">
+                                {' '}
+                                Số chữ số lẻ thập phân
                               </h4>
-                              <div className="pl-5">
-                                <div>
-                                  <input
-                                    className="form-check-input"
-                                    type="radio"
-                                    name="gridRadios"
-                                    id="gridRadios1"
-                                    value="option1"
-                                    checked
-                                  />
-                                  <h5>
-                                    Thông tư 133/2016/TT-BTC(Thay thế QĐ 48...)
-                                  </h5>
-                                </div>
+                            <div className="card-body">  
+                              <FormGroup row>
+                                <Label for="" sm={3}>fsdfasffsa</Label>
+                                <Col sm={9}>
+                                  <Input type="number" name="shit" id="" placeholder="shit number" />
+                                </Col>
+                              </FormGroup>
+                              <FormGroup row>
+                                <Label for="" sm={3}>fsdfasffsa</Label>
+                                <Col sm={9}>
+                                  <Input type="number" name="shit" id="" placeholder="shit number" />
+                                </Col>
+                              </FormGroup>   
+                              <FormGroup row>
+                                <Label for="" sm={3}>fsdfasffsa</Label>
+                                <Col sm={9}>
+                                  <Input type="number" name="shit" id="" placeholder="shit number" />
+                                </Col>
+                              </FormGroup>                               
 
-                                <div>
-                                  <input
-                                    className="form-check-input"
-                                    type="radio"
-                                    name="gridRadios"
-                                    id="gridRadios2"
-                                    value="option2"
-                                  />
-                                  <h5>
-                                    Thông tư 200/2014/TT-BTC(Thay thế QĐ 15...)
-                                  </h5>
-                                </div>
+                              <div className="column">
+                                <form className="form-inline">
+                                  {' '}
+                                  fsdfasffsa
+                                  <div className="form-group">
+                                    <input
+                                      type="number" // tăng số bằng mũi tên
+                                      className="form-control mx-sm-3"
+                                      aria-describedby="passwordHelpInline"
+                                    />
+                                  </div>
+                                </form>
+
+                                <form className="form-inline">
+                                  {' '}
+                                  fsadfasd
+                                  <div className="form-group">
+                                    <input
+                                      type="number" // tăng số bằng mũi tên
+                                      className="form-control mx-sm-3"
+                                      aria-describedby="passwordHelpInline"
+                                    />
+                                  </div>
+                                </form>
+
+                                <form className="form-inline">
+                                  {' '}
+                                  sdfasd
+                                  <div className="form-group">
+                                    <input
+                                      type="number" // tăng số bằng mũi tên
+                                      className="form-control mx-sm-3"
+                                      aria-describedby="passwordHelpInline"
+                                    />
+                                  </div>
+                                </form>
+
+                                <form className="form-inline">
+                                  {' '}
+                                  Number
+                                  <div className="form-group">
+                                    <input
+                                      type="number" // tăng số bằng mũi tên
+                                      className="form-control mx-sm-3"
+                                      aria-describedby="passwordHelpInline"
+                                    />
+                                  </div>
+                                </form>
                               </div>
                             </div>
                           </div>
                         </div>
 
-                        <div className="stretched_card mt-4 col-lg-3">
+                        <div className="stretched_card col-lg-4">
                           <div className="card">
-                            <div className="card_body">
-                              <h4 className="card_title">Hình thức sổ sách</h4>
-                              <div className="pl-5">
-                                <div>
-                                  <input
-                                    className="form-check-input"
-                                    type="radio"
-                                    name="gridRadios"
-                                    id="gridRadios1"
-                                    value="option1"
-                                    checked
-                                  />
-                                  <h5>Nhật ký chung</h5>
-                                </div>
-
-                                <div>
-                                  <input
-                                    className="form-check-input"
-                                    type="radio"
-                                    name="gridRadios"
-                                    id="gridRadios2"
-                                    value="option2"
-                                  />
-                                  <h5>Chứng từ ghi sổ</h5>
-                                </div>
+                            <div className="card-body">
+                              <h4 className="card-title"> Dấu Phân Cách</h4>
+                              <div className="pl-5"></div>
+                              <div className="form-group">
+                                <input
+                                  type="number" // tăng số bằng mũi tên
+                                  className="form-control mx-sm-3"
+                                  aria-describedby="passwordHelpInline"
+                                />
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-
-                      <div className="row">
-                        <div className="stretched_card mt-4 col-lg-12">
+                        <div className="stretched_card col-lg-4">
                           <div className="card">
-                            <div className="card_body">
-                              <h4 className="card_title">
-                                Phương Pháp tính giá xuất kho
-                              </h4>
-                              <div className="pl-5">
-                                <div>
-                                  <input
-                                    className="form-check-input"
-                                    type="radio"
-                                    name="gridRadios"
-                                    id="gridRadios1"
-                                    value="option1"
-                                    checked
-                                  />
-                                  <h5>
-                                    Giá bình quân gia quyền cuối kỳ ( tính đến
-                                    cuối bảng: mỗi tháng sẽ xuát kho cùng 1 giá)
-                                  </h5>
-                                </div>
-
-                                <div>
-                                  <input
-                                    className="form-check-input"
-                                    type="radio"
-                                    name="gridRadios"
-                                    id="gridRadios2"
-                                    value="option2"
-                                  />
-                                  <h5>
-                                    Giá bình quân gia quyền tại thời điểm xuất
-                                    kho ( thời điểm được tính đến cuối Ngày Ghi
-                                    Sổ)
-                                  </h5>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </fieldset>
-
-                    <div className="reply_btn pull-right mb-mob-3">
-                      <Button
-                        type="button"
-                        color="primary"
-                        className="btn-fixed-w mb-3 mr-2"
-                      >
-                        <i className="ion-ios-conform"></i>
-                        Conform
-                      </Button>
-                      <Button
-                        type="button"
-                        color="danger"
-                        className="btn-fixed-w mb-3 mr-2"
-                      >
-                        <i className="ion-ios-trash"></i>
-                        Delete
-                      </Button>
-                    </div>
-                  </TabPane>
-                  <TabPane className="p-3 pl-0" tabId="11">
-                    <div className="row">
-                      <div className="stretched_card col-lg-4">
-                        <div className="card">
-                          <div className="card-body">
-                            <h4 className="card-title">
-                              {' '}
-                              Số chữ số lẻ thập phân
-                            </h4>
-
-                            <div className="column">
-                              <form className="form-inline">
-                                {' '}
-                                fsdfasffsa
-                                <div className="form-group">
-                                  <input
-                                    type="number" // tăng số bằng mũi tên
-                                    className="form-control mx-sm-3"
-                                    aria-describedby="passwordHelpInline"
-                                  />
-                                </div>
-                              </form>
-
-                              <form className="form-inline">
-                                {' '}
-                                fsadfasd
-                                <div className="form-group">
-                                  <input
-                                    type="number" // tăng số bằng mũi tên
-                                    className="form-control mx-sm-3"
-                                    aria-describedby="passwordHelpInline"
-                                  />
-                                </div>
-                              </form>
-
-                              <form className="form-inline">
-                                {' '}
-                                sdfasd
-                                <div className="form-group">
-                                  <input
-                                    type="number" // tăng số bằng mũi tên
-                                    className="form-control mx-sm-3"
-                                    aria-describedby="passwordHelpInline"
-                                  />
-                                </div>
-                              </form>
-
-                              <form className="form-inline">
-                                {' '}
-                                Number
-                                <div className="form-group">
-                                  <input
-                                    type="number" // tăng số bằng mũi tên
-                                    className="form-control mx-sm-3"
-                                    aria-describedby="passwordHelpInline"
-                                  />
-                                </div>
-                              </form>
+                            <div className="card-body">
+                              <h4 className="card-title"> Dấu Phân Cách</h4>
+                              <div className="pl-5"></div>
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <div className="stretched_card col-lg-4">
-                        <div className="card">
-                          <div className="card-body">
-                            <h4 className="card-title"> Dấu Phân Cách</h4>
-                            <div className="pl-5"></div>
-                            <div className="form-group">
-                              <input
-                                type="number" // tăng số bằng mũi tên
-                                className="form-control mx-sm-3"
-                                aria-describedby="passwordHelpInline"
-                              />
-                            </div>
-                          </div>
-                        </div>
+                      <div className="reply_btn pull-right mb-mob-3">
+                        <Button
+                          type="button"
+                          color="primary"
+                          className="btn-fixed-w mb-3 mr-2"
+                        >
+                          <i className="ion-ios-conform"></i>
+                          Conform
+                        </Button>
+                        <Button
+                          type="button"
+                          color="danger"
+                          className="btn-fixed-w mb-3 mr-2"
+                        >
+                          <i className="ion-ios-trash"></i>
+                          Delete
+                        </Button>
                       </div>
-                      <div className="stretched_card col-lg-4">
-                        <div className="card">
-                          <div className="card-body">
-                            <h4 className="card-title"> Dấu Phân Cách</h4>
-                            <div className="pl-5"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="reply_btn pull-right mb-mob-3">
-                      <Button
-                        type="button"
-                        color="primary"
-                        className="btn-fixed-w mb-3 mr-2"
-                      >
-                        <i className="ion-ios-conform"></i>
-                        Conform
-                      </Button>
-                      <Button
-                        type="button"
-                        color="danger"
-                        className="btn-fixed-w mb-3 mr-2"
-                      >
-                        <i className="ion-ios-trash"></i>
-                        Delete
-                      </Button>
-                    </div>
-                    
-                  </TabPane>
+                    </TabPane>
+                 
                 </TabContent>
+                </Form>
               </CardBody>
             </Card>
           </Col>
