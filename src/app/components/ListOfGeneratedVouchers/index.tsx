@@ -10,6 +10,9 @@ import {
   ButtonGroup,
   Button,
   Container,
+  FormGroup,
+  Input,
+  Label,
 } from 'reactstrap';
 import { activateAuthLayout } from '../../../store/actions';
 import { withRouter } from 'react-router-dom';
@@ -336,32 +339,252 @@ class DataTable extends Component {
                   </div>
 
                   <div className="table table-bordered dataTable">
-                    <Card>
-                      <CardBody>
-                        <Row>
-                          <Col className="form-inline"  >
-                          <div className="form-group ">
-                            <Col  xs={3} md={2}>sadfasfasfas
-                            <input type="text" className="form-control" />
-                            </Col>
+                    <div className="row">
+                      <div className="stretched_c ard col-lg-4">
+                        <div className="card">
+                          <div className="card-body">
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Number
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="number"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Price
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="text"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Money
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="text"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Currency
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="text"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Currency
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="text"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Currency
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="text"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Currency
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="text"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                          </div>
+                        </div>
+                      </div>
 
-                            <Col  xs={3} md={2}> ...
-                            <input type="text" className="form-control" />
-                            </Col>
+                      <div className="stretched_c ard col-lg-4">
+                        <div className="card">
+                   
+                          <div className="card-body">
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Số Cuối
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="number"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Số Cuối
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="shit"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                               Số Cuối
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="shit"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Số Cuối
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="shit"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Số Cuối
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="shit"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Số Cuối
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="shit"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                            <FormGroup row>
+                              <Label for="" sm={3}>
+                                Số Cuối
+                              </Label>
+                              <Col sm={9}>
+                                <Input
+                                  type="text"
+                                  name="shit"
+                                  id=""
+                                  placeholder=""
+                                />
+                              </Col>
+                            </FormGroup>
+                          </div>
+                        </div>
+                        <div className="stretched_c ard col-lg-4">
+                          <div className="card">
+                          
+                            <div className="card-body">
+                              <FormGroup row>
+                                <Label for="" sm={3}>
+                                  Ngày-Tháng-Năm
+                                </Label>
+                                <Col sm={9}>
+                                  <Input
+                                    type="date"
+                                    name="number"
+                                    id=""
+                                    placeholder=""
+                                  />
+                                </Col>
+                              </FormGroup>
+                              <FormGroup row>
+                                <Label for="" sm={3}>
+                                  Phần Thập Phân
+                                </Label>
+                                <Col sm={9}>
+                                  <Input
+                                    type="number"
+                                    name="shit"
+                                    id=""
+                                    placeholder=""
+                                  />
+                                </Col>
+                              </FormGroup>
+                              <FormGroup row>
+                                <Label for="" sm={3}>
+                                  Hàng Ngàn Triệu
+                                </Label>
+                                <Col sm={9}>
+                                  <Input
+                                    type="number"
+                                    name="shit"
+                                    id=""
+                                    placeholder=""
+                                  />
+                                </Col>
+                              </FormGroup>                           
+                            </div>
+                          </div>
+                        </div>
+
                         
-
-                          <Col xs={6} md={4}>Variable width content
-                          <input type="text" className="form-control" />
-                          </Col>
-                          <Col xs={3} md={2}>
-
-                         <input type="text" className="form-control" />
-                         </Col>
-                         </div>
-                          </Col>
-                        </Row>
-                      </CardBody>
-                    </Card>
+                      </div>
+                    </div>
                   </div>
                 </CardBody>
               </Card>

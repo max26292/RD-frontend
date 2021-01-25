@@ -12,7 +12,9 @@ import {
   TabContent,
   TabPane,
   Form,
-  FormGroup, Label, Input,
+  FormGroup,
+  Label,
+  Input,
   Button,
 } from 'reactstrap';
 import { activateAuthLayout } from '../../../store/actions';
@@ -162,8 +164,7 @@ class DataTable extends React.Component<Props, State> {
                   </NavItem>
                 </Nav>
                 <Form>
-                <TabContent activeTab={this.state.activeTab3}>
-                  
+                  <TabContent activeTab={this.state.activeTab3}>
                     <TabPane tabId="9" className="p-3 pl-0">
                       <Row>
                         <Col md="4">
@@ -466,105 +467,170 @@ class DataTable extends React.Component<Props, State> {
                     </TabPane>
                     <TabPane className="p-3 pl-0" tabId="11">
                       <div className="row">
-                        <div className="stretched_card col-lg-4">
+                        <div className="stretched_c ard col-lg-4">
                           <div className="card">
-                              <h4 className="card-header">
-                                {' '}
-                                Số chữ số lẻ thập phân
-                              </h4>
-                            <div className="card-body">  
+                            <h4 className="card-header">
+                              {' '}
+                              Số chữ số lẻ thập phân
+                            </h4>
+                            <div className="card-body">
                               <FormGroup row>
-                                <Label for="" sm={3}>fsdfasffsa</Label>
+                                <Label for="" sm={3}>
+                                  Number
+                                </Label>
                                 <Col sm={9}>
-                                  <Input type="number" name="shit" id="" placeholder="shit number" />
+                                  <Input
+                                    type="number"
+                                    name="number"
+                                    id=""
+                                    placeholder=""
+                                  />
                                 </Col>
                               </FormGroup>
                               <FormGroup row>
-                                <Label for="" sm={3}>fsdfasffsa</Label>
+                                <Label for="" sm={3}>
+                                  Price
+                                </Label>
                                 <Col sm={9}>
-                                  <Input type="number" name="shit" id="" placeholder="shit number" />
+                                  <Input
+                                    type="number"
+                                    name="shit"
+                                    id=""
+                                    placeholder=""
+                                  />
                                 </Col>
-                              </FormGroup>   
+                              </FormGroup>
                               <FormGroup row>
-                                <Label for="" sm={3}>fsdfasffsa</Label>
+                                <Label for="" sm={3}>
+                                  Money
+                                </Label>
                                 <Col sm={9}>
-                                  <Input type="number" name="shit" id="" placeholder="shit number" />
+                                  <Input
+                                    type="number"
+                                    name="shit"
+                                    id=""
+                                    placeholder=""
+                                  />
                                 </Col>
-                              </FormGroup>                               
-
-                              <div className="column">
-                                <form className="form-inline">
-                                  {' '}
-                                  fsdfasffsa
-                                  <div className="form-group">
-                                    <input
-                                      type="number" // tăng số bằng mũi tên
-                                      className="form-control mx-sm-3"
-                                      aria-describedby="passwordHelpInline"
-                                    />
-                                  </div>
-                                </form>
-
-                                <form className="form-inline">
-                                  {' '}
-                                  fsadfasd
-                                  <div className="form-group">
-                                    <input
-                                      type="number" // tăng số bằng mũi tên
-                                      className="form-control mx-sm-3"
-                                      aria-describedby="passwordHelpInline"
-                                    />
-                                  </div>
-                                </form>
-
-                                <form className="form-inline">
-                                  {' '}
-                                  sdfasd
-                                  <div className="form-group">
-                                    <input
-                                      type="number" // tăng số bằng mũi tên
-                                      className="form-control mx-sm-3"
-                                      aria-describedby="passwordHelpInline"
-                                    />
-                                  </div>
-                                </form>
-
-                                <form className="form-inline">
-                                  {' '}
-                                  Number
-                                  <div className="form-group">
-                                    <input
-                                      type="number" // tăng số bằng mũi tên
-                                      className="form-control mx-sm-3"
-                                      aria-describedby="passwordHelpInline"
-                                    />
-                                  </div>
-                                </form>
-                              </div>
+                              </FormGroup>
+                              <FormGroup row>
+                                <Label for="" sm={3}>
+                                 Currency 
+                                </Label>
+                                <Col sm={9}>
+                                  <Input
+                                    type="number"
+                                    name="shit"
+                                    id=""
+                                    placeholder=""
+                                  />
+                                </Col>
+                              </FormGroup>
                             </div>
                           </div>
                         </div>
 
-                        <div className="stretched_card col-lg-4">
+                        <div className="stretched_c ard col-lg-4">
                           <div className="card">
+                            <h4 className="card-header">
+                              {' '}
+                              Mẫu Xem
+                            </h4>
                             <div className="card-body">
-                              <h4 className="card-title"> Dấu Phân Cách</h4>
-                              <div className="pl-5"></div>
-                              <div className="form-group">
-                                <input
-                                  type="number" // tăng số bằng mũi tên
-                                  className="form-control mx-sm-3"
-                                  aria-describedby="passwordHelpInline"
-                                />
-                              </div>
+                              <FormGroup row>
+                             
+                                <Col sm={9}>
+                                  <Input 
+                                    type="number"
+                                    name="number"
+                                    id=""
+                                    placeholder=""
+                                  />
+                                </Col>
+                              </FormGroup>
+                              <FormGroup row>
+                          
+                                <Col sm={9}>
+                                  <Input
+                                    type="number"
+                                    name="shit"
+                                    id=""
+                                    placeholder=""
+                                  />
+                                </Col>
+                              </FormGroup>
+                              <FormGroup row>
+                               
+                                <Col sm={9}>
+                                  <Input
+                                    type="number"
+                                    name="shit"
+                                    id=""
+                                    placeholder=""
+                                  />
+                                </Col>
+                              </FormGroup>
+                              <FormGroup row>
+                             
+                                <Col sm={9}>
+                                  <Input
+                                    type="number"
+                                    name="shit"
+                                    id=""
+                                    placeholder=""
+                                  />
+                                </Col>
+                              </FormGroup>
                             </div>
                           </div>
                         </div>
-                        <div className="stretched_card col-lg-4">
+
+                        <div className="stretched_c ard col-lg-4">
                           <div className="card">
+                            <h4 className="card-header">
+                              {' '}
+                              Dấu Phân Cách
+                            </h4>
                             <div className="card-body">
-                              <h4 className="card-title"> Dấu Phân Cách</h4>
-                              <div className="pl-5"></div>
+                              <FormGroup row>
+                                <Label for="" sm={3}>
+                                  Ngày-Tháng-Năm
+                                </Label>
+                                <Col sm={9}>
+                                  <Input
+                                    type="date"
+                                    name="number"
+                                    id=""
+                                    placeholder=""
+                                  />
+                                </Col>
+                              </FormGroup>
+                              <FormGroup row>
+                                <Label for="" sm={3}>
+                                  Phần Thập Phân
+                                </Label>
+                                <Col sm={9}>
+                                  <Input
+                                    type="number"
+                                    name="shit"
+                                    id=""
+                                    placeholder=""
+                                  />
+                                </Col>
+                              </FormGroup>
+                              <FormGroup row>
+                                <Label for="" sm={3}>
+                                  Hàng Ngàn Triệu
+                                </Label>
+                                <Col sm={9}>
+                                  <Input
+                                    type="number"
+                                    name="shit"
+                                    id=""
+                                    placeholder=""
+                                  />
+                                </Col>
+                              </FormGroup>                           
                             </div>
                           </div>
                         </div>
@@ -589,8 +655,7 @@ class DataTable extends React.Component<Props, State> {
                         </Button>
                       </div>
                     </TabPane>
-                 
-                </TabContent>
+                  </TabContent>
                 </Form>
               </CardBody>
             </Card>
