@@ -1,37 +1,37 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState, useEffect } from 'react';
-import { Button, Col, Row, Alert } from 'reactstrap';
-import { AvForm, AvField } from 'availity-reactstrap-validation';
 
-
-import { Link, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { isEmpty } from 'lodash'; //thư viện JavaScript mạnh mẽ dùng để xử lý Array, Object, Function, Collection ..v.v
 //The AvForm component wraps reactstrap's form to add context
 //that the other Av components know about to help share validation state
 import qs from 'qs';
-import { isEmpty } from 'lodash'; //thư viện JavaScript mạnh mẽ dùng để xử lý Array, Object, Function, Collection ..v.v
-import { Redirect } from 'react-router-dom';
-import { AnyARecord } from 'dns';
-import { MainLayout } from 'app/containers/MainLayout';
-
+import React, { FormEvent, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import { Alert, Button, Row ,Form,FormGroup} from 'reactstrap';
+import { AvForm, AvField } from 'availity-reactstrap-validation';
+import { actions } from 'app/containers/AuthorizeContainer/slice'
 // import { checkLogin } from '../../../store/actions';
 import "./scss/loginPage.scss";
+import { IapiRequest } from 'types/apiType';
+
+
+
 
 interface LoginInfo {
   username: string;
   password: string | number;
-  href?: string;
 }
 export function LoginPage(props) {
   const requestParams: LoginInfo = qs.parse(props.location.search, {
     ignoreQueryPrefix: true,
   });
+
+  const dispatch = useDispatch();
   const [{ username, password }, setCredentials] = useState<LoginInfo>({
     username: '',
-    password: '',
-    href: '',
+    password: ''
   });
 
   const login = (event: React.FormEvent, value: any) => {
@@ -46,6 +46,19 @@ export function LoginPage(props) {
   ) {
     console.debug('in redirect ', { props }, { requestParams });
     return <Redirect to= '/dashboard' />;
+  }
+  const hanleLogin = (submit:LoginInfo) =>{
+    const {username,password } = submit
+    const data : IapiRequest<LoginInfo> = {
+      method: 'POST',
+      url: '/',
+      requestBody: {
+        username: username,
+        password: password
+      }  
+    }
+    dispatch(actions.login(data))
+    // actions.login(data);
   }
 
   return (
@@ -65,7 +78,10 @@ export function LoginPage(props) {
             <div className="login-form">
               <AvForm
                 id="login_form_sec"
-                onValidSubmit={login}
+                onValidSubmit={(e,data)=>{
+                  hanleLogin(data);
+                  
+                }}
                 onInvalidSubmit={data => {
                   console.debug('invalid', data);
                 }}
@@ -81,7 +97,7 @@ export function LoginPage(props) {
 
                   <div>
                     <AvField
-                      name="email"
+                      name="username"
                       label="Email"
                       value={username}
                       placeholder="Enter Email Address"
@@ -102,13 +118,15 @@ export function LoginPage(props) {
                   </div>
 
                   <div className="submit-btn-area">
-                    <a 
+                    <Button  color="primary" >Login</Button>
+                    {/* <a 
                       type="submit"
+                      type="submit" onClick={(e)=>{e.preventDefault()}}
                       color="primary"
                       className="btn btn-primary"
                       href = "/data-declare"
                     > Login 
-                    </a>
+                    </a> */}
                   </div>
                   <div className="form-footer text-center mt-5">
                                             <p className="text-muted">Don't have Account? <Link to="/auth/register"><i className="mdi mdi-lock"></i> Register Now </Link></p>

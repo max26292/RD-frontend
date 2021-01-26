@@ -26,7 +26,7 @@
     "@types/webpack-env": "1.15.1",
     "apexcharts": "^3.20.0",
     "availity-reactstrap-validation": "^2.6.1",
-    "axios": "^0.19.2",
+    "axios": "0.21.1",
     "axios-mock-adapter": "^1.18.2",
     "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",

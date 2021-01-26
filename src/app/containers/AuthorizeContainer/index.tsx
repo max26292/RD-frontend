@@ -30,14 +30,7 @@ export function AuthorizeContainer(props: Props) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
   // cu phap mac dinh
-  // const match = props.match;
-
-  const login = () => {
-    return axios.post('/login');
-  };
-  const checkAuth = () => {
-    return axios.get('/user/check');
-  };
+  // const match = props.match; 
 
   return (
     <>

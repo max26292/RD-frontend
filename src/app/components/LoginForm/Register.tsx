@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import { Alert, Button, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { registerUser } from './actions';
 // import { registerUser, emptyError } from '../../../store/actions';
 // import Logo from '../../assets/images/logo-login.svg';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
@@ -18,7 +17,7 @@ interface params {}
 
 
 interface Props extends RouteProps<match<params>>, AuthorizeContainerState {
-    register: Function;
+    register?: Function;
 }
 
 interface State {

@@ -16,3 +16,8 @@ export interface match<P> {
   path: string;
   url: string;
 }
+export interface IAuthorization{
+  username:string|boolean,
+  token:string|boolean,
+  userId:Number|boolean
+}

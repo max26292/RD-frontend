@@ -9,7 +9,6 @@ import { InitialDeclarationState } from 'app/containers/InitialDeclaration/types
 import { ListWarehouseState } from 'app/containers/ListWarehouse/types';
 import { MainLayoutState } from 'app/containers/MainLayout/types';
 import { YearStartingState } from 'app/containers/YearStarting/types';
-
 // import { listWarehouseState } from 'app/containers/ListWarehouseState/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
@@ -17,8 +16,9 @@ import { YearStartingState } from 'app/containers/YearStarting/types';
   Because the redux-injectors injects your reducers asynchronously somewhere in your code
   You have to declare them here manually
 */
+
 export interface RootState {
-  initialDeclaration: InitialDeclarationState;
+  initialDeclaration?: InitialDeclarationState;
   mainLayout: MainLayoutState;
   authorizeContainer?: AuthorizeContainerState;
   listWarehouse?: ListWarehouseState;
