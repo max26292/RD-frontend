@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { initRequestState } from 'api/types';
 import { AuthorizeContainerState } from 'app/containers/AuthorizeContainer/types';
 import { DataDeclarationState } from 'app/containers/DataDeclaration/types';
 import { DeclarationListOfAccountsState } from 'app/containers/DeclarationListOfAccounts/types';
@@ -18,6 +19,7 @@ import { YearStartingState } from 'app/containers/YearStarting/types';
 */
 
 export interface RootState {
+  request:initRequestState,
   initialDeclaration?: InitialDeclarationState;
   mainLayout: MainLayoutState;
   authorizeContainer?: AuthorizeContainerState;
