@@ -28,10 +28,13 @@ import { RouteList } from './routes';
 
 import axios from 'axios'
 import login from 'store/auth/login/reducer.';
-
+import { reducer, sliceKey } from 'api/slice';
+import {apiProcessSaga} from 'api/saga';
+import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 
 export function App () {
-
+    useInjectSaga({ key: sliceKey, saga: apiProcessSaga });
+    useInjectReducer({ key: sliceKey, reducer: reducer });
     const login = () => {
       return axios.post('/login');
     }

@@ -22,7 +22,7 @@ export interface RootState {
   request:initRequestState,
   initialDeclaration?: InitialDeclarationState;
   mainLayout: MainLayoutState;
-  authorizeContainer?: AuthorizeContainerState;
+  authorizeContainer: AuthorizeContainerState;
   listWarehouse?: ListWarehouseState;
   innitialDeclaration?: InitialDeclarationState;
   dataDeclaration?: DataDeclarationState;

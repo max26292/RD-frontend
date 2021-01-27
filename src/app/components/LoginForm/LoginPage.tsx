@@ -15,6 +15,8 @@ import { actions } from 'app/containers/AuthorizeContainer/slice'
 // import { checkLogin } from '../../../store/actions';
 import "./scss/loginPage.scss";
 import { IapiRequest } from 'types/apiType';
+import { apiRequest } from 'api';
+import { ContainerState } from 'app/containers/AuthorizeContainer/types';
 
 
 
@@ -47,18 +49,21 @@ export function LoginPage(props) {
     console.debug('in redirect ', { props }, { requestParams });
     return <Redirect to= '/dashboard' />;
   }
+  
   const hanleLogin = (submit:LoginInfo) =>{
-    const {username,password } = submit
+    // type xx =  typeof actions.setLoginInfo;
+    // console.debug(typeof actions.setLoginInfo);
+    const {username,password } = submit;
     const data : IapiRequest<LoginInfo> = {
+      action:actions.setLoginInfo,
       method: 'POST',
-      url: '/',
+      url: '/login',     
       requestBody: {
         username: username,
         password: password
       }  
-    }
-    dispatch(actions.login(data))
-    // actions.login(data);
+    };
+    dispatch(apiRequest(data));
   }
 
   return (

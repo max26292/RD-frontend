@@ -7,11 +7,15 @@ export const initialState: ContainerState = {
   loading:false
 };
 
+export interface Responded {
+  loading:false
+}
+
 const mainLayoutSlice = createSlice({
   name: 'mainLayout',
   initialState,
   reducers: {
-    isLoading(state, action: PayloadAction<any>) {
+    isLoading(state: ContainerState, action: PayloadAction<any>) {
       state.loading = true
     },
     isLoaded(state, action: PayloadAction<any>) {

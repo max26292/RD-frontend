@@ -1,7 +1,7 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { IapiRequest } from "types/apiType";
 import { createSlice } from "utils/@reduxjs/toolkit";
-import { initRequestState, ResponseType } from "./types";
+import { initRequestState, ResponseFail, ResponseSuccess } from "./types";
 
 const initialState : initRequestState = {
     loading:false
@@ -11,20 +11,23 @@ const apiProcessSlice = createSlice({
   name: 'request',
   initialState,
   reducers: {
-    makeRequest(state, action: PayloadAction<IapiRequest<any>>) {
+    makeRequest<T,ResponseType>(state, action: PayloadAction<IapiRequest<T>>) {
       state.loading = true;
     },
-    requestSucess<T>(state:T, action: PayloadAction<ResponseType>) {
+    requestSucess<T>(state, action: PayloadAction<ResponseSuccess<T>>) {
       // state.loading = false;
-    },
-    requestFailed(state, action: PayloadAction<ResponseType>) {
-      state.loading = false;
-      const {payload:{error,message}} = action;
-      if(error){
-        state.error = error
+      const {payload} = action;
+      return {
+        ...state,
+        loading :false,
+        ...payload
       }
-      if(message){
-          state.message = message
+    },
+    requestFailed(state, action: PayloadAction<ResponseFail>) {
+      const {payload} = action;
+      return {
+        loading :false,
+        ...payload
       }
     },
   },

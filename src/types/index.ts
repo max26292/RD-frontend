@@ -17,7 +17,7 @@ export interface match<P> {
   url: string;
 }
 export interface IAuthorization{
-  username:string|boolean,
+  username?:string|boolean,
   token:string|boolean,
-  userId:Number|boolean
+  userId?:Number|boolean
 }

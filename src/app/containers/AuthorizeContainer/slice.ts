@@ -1,4 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
+import { ResponseSuccess } from 'api/types';
 import { IAuthorization } from 'types';
 import { IapiRequest } from 'types/apiType';
 import { createSlice } from 'utils/@reduxjs/toolkit';
@@ -20,52 +21,22 @@ const authorizeContainerSlice = createSlice({
   name: 'authorizeContainer',
   initialState,
   reducers: {
-    register(state, action: PayloadAction<any>) {
+    setLoginInfo(state, action: PayloadAction<ResponseSuccess>) {
+      const {payload} = action;
+      const data :IAuthorization = payload.data;
+      console.debug({data});
+      return {
+        ...state,
+        auth:{
+          token:data.token, 
+          userId: data.userId         
+        },
+      }
+    },
+    clearLoginInfo(state, action: PayloadAction<ContainerState>) {
       state.registrationError = !state.registrationError;
     },
-    isLoading(state){
-      return {
-        ...state,
-        loading :true
-      }
-    },
-    isLoaded(state){
-      return {
-        ...state,
-        loading :false
-      }
-    },
-
-    loginSuccess(state, action: PayloadAction<IAuthorization>) {
-      const { payload } = action;
-      return {
-        ...state,
-        userId: payload.userId,
-        username: payload.username,
-        token: payload.token,
-      };
-    },
-    loginFailed(state, action: PayloadAction<IAuthorization>) {
-      return {
-        ...state,
-        userId: false,
-        username: false,
-        token: false,
-      };
-    },
-    login(state,action: PayloadAction<IapiRequest<any>>){
-      state.loading= true;
-      // return action.payload;
-    },  
-    logout(state, action: PayloadAction<IAuthorization>) {
-      return {
-        ...state,
-        userId: false,
-        username: false,
-        token: false,
-      };
-    },
-  },
+  }
 });
 
 export const { actions, reducer, name: sliceKey } = authorizeContainerSlice;
