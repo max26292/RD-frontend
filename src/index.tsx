@@ -20,11 +20,11 @@ import { App } from 'app';
 import { HelmetProvider } from 'react-helmet-async';
 
 import { configureAppStore } from 'store/configureStore';
-
+import { PersistGate } from 'redux-persist/integration/react'
 // Initialize languages
 import './locales/i18n';
 
-const store = configureAppStore();
+const {store,persistor} = configureAppStore();
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 
 interface Props {
@@ -32,9 +32,11 @@ interface Props {
 }
 const ConnectedApp = ({ Component }: Props) => (
   <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
     <HelmetProvider>
       <Component />
     </HelmetProvider>
+    </PersistGate>
   </Provider>
 );
 const render = (Component: typeof App) => {

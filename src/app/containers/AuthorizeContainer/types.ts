@@ -14,8 +14,4 @@ export interface IloginBody{
   password:string
 }
 
-
-
-
-
 export type ContainerState = AuthorizeContainerState;

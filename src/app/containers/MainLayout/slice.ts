@@ -15,11 +15,12 @@ const mainLayoutSlice = createSlice({
   name: 'mainLayout',
   initialState,
   reducers: {
-    isLoading(state: ContainerState, action: PayloadAction<any>) {
-      state.loading = true
-    },
-    isLoaded(state, action: PayloadAction<any>) {
-      state.loading = false
+    setData(state: ContainerState, action: PayloadAction<any>) {
+      const {payload} = action;
+      return {
+        ...state,
+        ...payload
+      }
     },
   },
 });

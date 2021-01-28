@@ -17,7 +17,7 @@ import "./scss/loginPage.scss";
 import { IapiRequest } from 'types/apiType';
 import { apiRequest } from 'api';
 import { ContainerState } from 'app/containers/AuthorizeContainer/types';
-
+import {actions as layoutActions} from 'app/containers/MainLayout/slice'
 
 
 
@@ -55,7 +55,7 @@ export function LoginPage(props) {
     // console.debug(typeof actions.setLoginInfo);
     const {username,password } = submit;
     const data : IapiRequest<LoginInfo> = {
-      action:actions.setLoginInfo,
+      action:layoutActions.setData,
       method: 'POST',
       url: '/login',     
       requestBody: {
