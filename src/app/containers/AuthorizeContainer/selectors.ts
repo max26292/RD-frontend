@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { RootState } from 'types';
+import { IAuthorization, RootState } from 'types';
 import { initialState } from './slice';
 
 const selectDomain = (state: RootState) =>
@@ -9,4 +9,8 @@ const selectDomain = (state: RootState) =>
 export const selectAuthorizeContainer = createSelector(
   [selectDomain],
   authorizeContainerState => authorizeContainerState,
+);
+export const selectAuthInfo = createSelector(
+  [selectDomain],
+  authorizeContainerState => authorizeContainerState.auth as IAuthorization,
 );

@@ -51,7 +51,7 @@ class Pagesregister extends React.Component<Props, State> {
 
   handleInvalidSubmit(event, errors, values) {
       console.debug(this.props);
-    this.props.register({ email: values.email });
+      // this.props.register({ email: values.email });
   }
 
   render() {

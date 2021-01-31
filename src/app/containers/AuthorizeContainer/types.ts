@@ -1,4 +1,4 @@
-import { IAuthorization } from "types";
+import { IAuthorization } from 'types';
 
 /* --- STATE --- */
 export interface AuthorizeContainerState {
@@ -6,12 +6,12 @@ export interface AuthorizeContainerState {
   auth?: IAuthorization;
   registrationError?: any;
   loading?: any;
-  user?:string
+  user?: string;
 }
 
-export interface IloginBody{
-  username:string,
-  password:string
+export interface IloginBody {
+  username: string;
+  password: string;
 }
 
 export type ContainerState = AuthorizeContainerState;

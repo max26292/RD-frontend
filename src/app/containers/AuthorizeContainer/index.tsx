@@ -14,8 +14,6 @@ import { reducer, sliceKey } from './slice';
 import { selectAuthorizeContainer } from './selectors';
 import { authorizeContainerSaga } from './saga';
 
-import axios from 'axios';
-
 interface Props {
   children?: React.ReactNode;
   match?: any;
@@ -30,7 +28,7 @@ export function AuthorizeContainer(props: Props) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
   // cu phap mac dinh
-  // const match = props.match; 
+  // const match = props.match;
 
   return (
     <>

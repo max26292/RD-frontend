@@ -1,15 +1,16 @@
-import { Method } from "axios";
-interface genericFunction<T>  {
-    (payload :any): T;
-  }
-export interface IapiRequest <T> {
-    action?:Function,
-    method: Method,
-    url: string,   
-    requestBody? : T   
-    path?:string
+import { Method } from 'axios';
+
+export interface IapiRequest<T = any> {
+  method: Method;
+  url: string;
+  action?: Function;
+  requestBody?: T;
+  path?: string;
+}
+export interface IapiFunction<T, RT = any> {
+  (data?: IapiRequest<T>): IapiResponse<RT>;
 }
 export interface IapiResponse<T> {
-    data:T,
-    message?:string
+  data: T;
+  message?: string;
 }

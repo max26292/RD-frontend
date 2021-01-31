@@ -1,6 +1,6 @@
 /* --- STATE --- */
 export interface MainLayoutState {
-    loading:boolean
+  loading: boolean;
 }
 
 export type ContainerState = MainLayoutState;

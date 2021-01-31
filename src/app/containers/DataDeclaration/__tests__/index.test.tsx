@@ -11,14 +11,14 @@ const renderComponent = (store: Store) =>
   render(
     <Provider store={store}>
       <HelmetProvider>
-        <DataDeclaration  />
+        <DataDeclaration />
       </HelmetProvider>
-    </Provider>
+    </Provider>,
   );
 
 describe('<DataDeclaration />', () => {
   let store: ReturnType<typeof configureAppStore>;
-  
+
   beforeEach(() => {
     store = configureAppStore();
   });

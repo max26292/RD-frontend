@@ -4,11 +4,11 @@ import { ContainerState } from './types';
 
 // The initial state of the MainLayout container
 export const initialState: ContainerState = {
-  loading:false
+  loading: false,
 };
 
 export interface Responded {
-  loading:false
+  loading: false;
 }
 
 const mainLayoutSlice = createSlice({
@@ -16,11 +16,11 @@ const mainLayoutSlice = createSlice({
   initialState,
   reducers: {
     setData(state: ContainerState, action: PayloadAction<any>) {
-      const {payload} = action;
+      const { payload } = action;
       return {
         ...state,
-        ...payload
-      }
+        ...payload,
+      };
     },
   },
 });

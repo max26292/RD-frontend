@@ -8,44 +8,26 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
-
-import { GlobalStyle } from 'styles/global-styles';
-import 'styles/scss/App.scss';
+import { apiProcessSaga } from 'api/saga';
+import { sliceKey } from 'api/slice';
 // import { HomePage } from './containers/HomePage/Loadable';
 import { MainLayout } from 'app/containers/MainLayout';
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { GlobalStyle } from 'styles/global-styles';
+import 'styles/scss/App.scss';
+import { useInjectSaga } from 'utils/redux-injectors';
+import { LoginForm } from './components/LoginForm';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
-import { LoginForm } from './components/LoginForm'
-
-import { ListWarehouse } from './containers/ListWarehouse/Loadable'
-import { InitialDeclaration } from './containers/InitialDeclaration/Loadable';
 import { RouteList } from './routes';
-// import Register from './components/LoginForm/Register';
-// import {Navbar} from './components/Navbar';
 
-import axios from 'axios'
-import login from 'store/auth/login/reducer.';
-import { reducer, sliceKey } from 'api/slice';
-import {apiProcessSaga} from 'api/saga';
-import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
+
 
 export function App () {
     useInjectSaga({ key: sliceKey, saga: apiProcessSaga });
-    useInjectReducer({ key: sliceKey, reducer: reducer });
-    const login = () => {
-      return axios.post('/login');
-    }
-    const checkAuth = () => { 
-      return axios.get('/user/check');
-    }
-
-
-
-
-
+    // useInjectReducer({ key: sliceKey, reducer: reducer });         
   return (
     <BrowserRouter>
       <Helmet

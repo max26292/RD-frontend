@@ -1,34 +1,34 @@
-import { PayloadAction } from "@reduxjs/toolkit";
-import { IapiRequest } from "types/apiType";
-import { createSlice } from "utils/@reduxjs/toolkit";
-import { initRequestState, ResponseFail, ResponseSuccess } from "./types";
+import { PayloadAction } from '@reduxjs/toolkit';
+import { Action } from 'history';
+import { IapiRequest } from 'types/apiType';
+import { createSlice } from 'utils/@reduxjs/toolkit';
+import { initRequestState, ResponseType } from './types';
+import { history } from 'store/configureStore';
 
-const initialState : initRequestState = {
-    loading:false
-}
+const initialState: initRequestState = {
+  loading: false,
+};
 
 const apiProcessSlice = createSlice({
   name: 'request',
-  initialState,
+  initialState: initialState,
   reducers: {
-    makeRequest<T,ResponseType>(state, action: PayloadAction<IapiRequest<T>>) {
+    makeRequest<T, RT>(state, action: PayloadAction<IapiRequest<T>>) {
       state.loading = true;
     },
-    requestSucess<T>(state, action: PayloadAction<ResponseSuccess<T>>) {
+    requestSucess<T>(state, action: PayloadAction<ResponseType<T>>) {
       // state.loading = false;
-      const {payload} = action;
+      const { payload } = action;
       return {
         ...state,
-        loading :false,
-        ...payload
-      }
+        loading: false,
+      };
     },
-    requestFailed(state, action: PayloadAction<ResponseFail>) {
-      const {payload} = action;
+    requestFailed(state, action: PayloadAction<ResponseType>) {
+      const { payload } = action;
       return {
-        loading :false,
-        ...payload
-      }
+        loading: false,
+      };
     },
   },
 });

@@ -7,5 +7,3 @@ export const CONFIRM_ERROR = 'confirm_error';
 
 export const API_FAILED = 'api_failed';
 export const EMPTY_ERROR = 'empty_error';
-
-

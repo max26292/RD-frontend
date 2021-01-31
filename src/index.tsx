@@ -5,37 +5,34 @@
  * code.
  */
 
-import 'react-app-polyfill/ie11';
-import 'react-app-polyfill/stable';
-
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import * as serviceWorker from 'serviceWorker';
-import 'sanitize.css/sanitize.css';
-
 // Import root app
 import { App } from 'app';
-
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import * as React from 'react';
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
+import * as ReactDOM from 'react-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
+import 'sanitize.css/sanitize.css';
+import * as serviceWorker from 'serviceWorker';
 import { configureAppStore } from 'store/configureStore';
-import { PersistGate } from 'redux-persist/integration/react'
 // Initialize languages
 import './locales/i18n';
 
-const {store,persistor} = configureAppStore();
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 
 interface Props {
   Component: typeof App;
 }
+const { store, persistor } = configureAppStore();
 const ConnectedApp = ({ Component }: Props) => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-    <HelmetProvider>
-      <Component />
-    </HelmetProvider>
+      <HelmetProvider>
+        <Component />
+      </HelmetProvider>
     </PersistGate>
   </Provider>
 );

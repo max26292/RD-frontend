@@ -3,7 +3,7 @@
  */
 
 import { combineReducers } from '@reduxjs/toolkit';
-
+import { reducer } from 'api/slice';
 import { InjectedReducersType } from 'utils/types/injector-typings';
 
 /**
@@ -17,6 +17,8 @@ export function createReducer(injectedReducers: InjectedReducersType = {}) {
     return state => state;
   } else {
     return combineReducers({
+      // router:connectRouter(history),
+      request: reducer,
       ...injectedReducers,
     });
   }

@@ -6,8 +6,8 @@ import { isEmpty } from 'lodash'; //thư viện JavaScript mạnh mẽ dùng đ�
 //The AvForm component wraps reactstrap's form to add context
 //that the other Av components know about to help share validation state
 import qs from 'qs';
-import React, { FormEvent, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { FormEvent, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { Alert, Button, Row ,Form,FormGroup} from 'reactstrap';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
@@ -15,9 +15,11 @@ import { actions } from 'app/containers/AuthorizeContainer/slice'
 // import { checkLogin } from '../../../store/actions';
 import "./scss/loginPage.scss";
 import { IapiRequest } from 'types/apiType';
-import { apiRequest } from 'api';
+import { makeRequest } from 'api';
 import { ContainerState } from 'app/containers/AuthorizeContainer/types';
+import {selectAuthInfo} from 'app/containers/AuthorizeContainer/selectors';
 import {actions as layoutActions} from 'app/containers/MainLayout/slice'
+import { IAuthorization } from 'types';
 
 
 
@@ -26,11 +28,23 @@ interface LoginInfo {
   password: string | number;
 }
 export function LoginPage(props) {
+
+  const selectData  =  useSelector(selectAuthInfo);
+  const dispatch = useDispatch()
+  useEffect(() => {
+    const {token}  =  selectData ;
+    console.debug(token);
+    if(token.length>0){
+      // dispatch(push('/data-declare'));
+    }
+  }, [selectData])
+
+
   const requestParams: LoginInfo = qs.parse(props.location.search, {
     ignoreQueryPrefix: true,
   });
 
-  const dispatch = useDispatch();
+  ;
   const [{ username, password }, setCredentials] = useState<LoginInfo>({
     username: '',
     password: ''
@@ -55,15 +69,15 @@ export function LoginPage(props) {
     // console.debug(typeof actions.setLoginInfo);
     const {username,password } = submit;
     const data : IapiRequest<LoginInfo> = {
-      action:layoutActions.setData,
       method: 'POST',
-      url: '/login',     
+      url: '/login',
+      action:actions.setLoginInfo,          
       requestBody: {
         username: username,
         password: password
       }  
     };
-    dispatch(apiRequest(data));
+    dispatch(makeRequest(data));
   }
 
   return (
