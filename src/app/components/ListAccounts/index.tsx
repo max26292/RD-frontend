@@ -4,11 +4,33 @@ import React, { Component } from 'react';
 import { Row, Col, Card, CardBody, ButtonGroup, Button } from 'reactstrap';
 import { activateAuthLayout } from '../../../store/actions';
 import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { connect, ConnectedProps } from 'react-redux';
 import { MDBDataTable } from 'mdbreact';
 
-class DataTable extends Component {
-  constructor(props) {
+
+interface RootState {
+  activateAuthLayout?: boolean
+}
+
+const mapState = (state: RootState) => ({
+  activateAuthLayout: state.activateAuthLayout
+})
+
+const mapDispatch = {
+}
+
+const connector = connect(mapState, mapDispatch)
+
+// The inferred type will look like:
+// {isOn: boolean, toggleOn: () => void}
+type PropsFromRedux = ConnectedProps<typeof connector>
+
+type Props = PropsFromRedux & {
+  backgroundColor: string
+}
+
+class DataTable extends Component<Props ,RootState> {
+  constructor(props:Props) {
     super(props);
     this.state = {};
   }
@@ -323,7 +345,6 @@ class DataTable extends Component {
     };
 
     return (
-      <>
         <React.Fragment>
           <Row>
             <Col>
@@ -398,9 +419,10 @@ class DataTable extends Component {
             Kết Thúc
           </Button>
         </React.Fragment>
-      </>
+      
     );
   }
 }
 
-export default withRouter(connect(null, { activateAuthLayout })(DataTable));
+// export default withRouter(connect(null, { activateAuthLayout })(DataTable));
+export default withRouter<any,any>(connect<any>(mapState, mapDispatch)(DataTable));

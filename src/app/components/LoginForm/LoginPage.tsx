@@ -20,6 +20,7 @@ import { ContainerState } from 'app/containers/AuthorizeContainer/types';
 import {selectAuthInfo} from 'app/containers/AuthorizeContainer/selectors';
 import {actions as layoutActions} from 'app/containers/MainLayout/slice'
 import { IAuthorization } from 'types';
+import { history } from 'store/configureStore';
 
 
 
@@ -32,11 +33,11 @@ export function LoginPage(props) {
   const selectData  =  useSelector(selectAuthInfo);
   const dispatch = useDispatch()
   useEffect(() => {
-    const {token}  =  selectData ;
-    console.debug(token);
-    if(token.length>0){
-      // dispatch(push('/data-declare'));
-    }
+    console.debug(selectData);
+    // const {token}  =  selectData ;
+    // if(token.length>0){
+    //   // history.push('/data-declare');
+    // }
   }, [selectData])
 
 
@@ -60,7 +61,6 @@ export function LoginPage(props) {
     !isEmpty(requestParams.username) &&
     !isEmpty(requestParams.password)
   ) {
-    console.debug('in redirect ', { props }, { requestParams });
     return <Redirect to= '/dashboard' />;
   }
   

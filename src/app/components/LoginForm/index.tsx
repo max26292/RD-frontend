@@ -16,7 +16,6 @@ interface params {
 export function LoginForm(props: RouteProps<match<params>>) {
   const { match } = props;
   const { path } = match;
-  console.table(match);
   return (
     <Div>
       {path !== '/auth/login' ? <Register {...props}/> :

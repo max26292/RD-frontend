@@ -63,4 +63,4 @@ class FormBasic extends Component {
   }
 }
 
-export default withRouter(connect(null, { activateAuthLayout })(FormBasic));
+export default withRouter<any,any>(connect(null, { activateAuthLayout })(FormBasic));

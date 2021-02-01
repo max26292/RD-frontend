@@ -596,4 +596,4 @@ class DataTable extends Component {
   }
 }
 
-export default withRouter(connect(null, { activateAuthLayout })(DataTable));
+export default withRouter<any,any>(connect(null, { activateAuthLayout })(DataTable));

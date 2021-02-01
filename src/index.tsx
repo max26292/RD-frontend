@@ -7,14 +7,14 @@
 
 // Import root app
 import { App } from 'app';
-import { Provider } from 'react-redux';
+import { Provider,ReactReduxContext } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import * as React from 'react';
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 import * as ReactDOM from 'react-dom';
 import { HelmetProvider } from 'react-helmet-async';
-
+import { Spinner } from 'reactstrap';
 import 'sanitize.css/sanitize.css';
 import * as serviceWorker from 'serviceWorker';
 import { configureAppStore } from 'store/configureStore';
@@ -27,15 +27,16 @@ interface Props {
   Component: typeof App;
 }
 const { store, persistor } = configureAppStore();
-const ConnectedApp = ({ Component }: Props) => (
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
+const ConnectedApp = ({ Component }: Props) => {
+  return(
+  <Provider store={store} context={ReactReduxContext}>
+    <PersistGate loading={<Spinner color="warning" />} persistor={persistor} >
       <HelmetProvider>
         <Component />
       </HelmetProvider>
     </PersistGate>
   </Provider>
-);
+)};
 const render = (Component: typeof App) => {
   ReactDOM.render(<ConnectedApp Component={Component} />, MOUNT_NODE);
 };

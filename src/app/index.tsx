@@ -14,7 +14,8 @@ import { sliceKey } from 'api/slice';
 import { MainLayout } from 'app/containers/MainLayout';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Router, Switch } from 'react-router-dom';
+import { history } from 'store/configureStore';
 import { GlobalStyle } from 'styles/global-styles';
 import 'styles/scss/App.scss';
 import { useInjectSaga } from 'utils/redux-injectors';
@@ -24,12 +25,11 @@ import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
 import { RouteList } from './routes';
 
 
-
 export function App () {
     useInjectSaga({ key: sliceKey, saga: apiProcessSaga });
     // useInjectReducer({ key: sliceKey, reducer: reducer });         
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <Helmet
         titleTemplate="%s - React Boilerplate"
         defaultTitle="React Boilerplate"
@@ -37,6 +37,7 @@ export function App () {
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
 
+      {/* <ConnectedRouter history={history} context={ReactReduxContext}> */}
       <>
         <Route
           path='/'
@@ -68,6 +69,6 @@ export function App () {
 
       {/* <Route component={InitialDeclaration} /> */}
 
-    </BrowserRouter>
+    </Router>
   );
 }

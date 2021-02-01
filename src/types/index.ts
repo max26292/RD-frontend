@@ -18,7 +18,7 @@ export interface match<P> {
 }
 export interface IAuthorization {
   username?: string;
-  token: string;
+  token?: string;
   userId?: Number;
   id?: Number;
 }
