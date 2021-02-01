@@ -14,4 +14,8 @@ export interface IloginBody {
   password: string;
 }
 
+export interface Irestore {
+  isRestore: boolean
+}
+
 export type ContainerState = AuthorizeContainerState;
