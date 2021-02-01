@@ -23,11 +23,13 @@ import { LoginForm } from './components/LoginForm';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { AuthorizeContainer } from './containers/AuthorizeContainer/Loadable';
 import { RouteList } from './routes';
+import { selectAuthInfo } from 'app/containers/AuthorizeContainer'
+import { LoadingComponent } from 'app/components/LoadingComponent';
 
-
-export function App () {
-    useInjectSaga({ key: sliceKey, saga: apiProcessSaga });
-    // useInjectReducer({ key: sliceKey, reducer: reducer });         
+export { selectAuthInfo, LoadingComponent };
+export function App() {
+  useInjectSaga({ key: sliceKey, saga: apiProcessSaga });
+  // useInjectReducer({ key: sliceKey, reducer: reducer });         
   return (
     <Router history={history}>
       <Helmet
@@ -47,22 +49,22 @@ export function App () {
         >
         </Route>
 
-             
+
         <Route
-          path="/auth"          
+          path="/auth"
           render={({ match: { url } }) => {
-            return(          
-            <AuthorizeContainer>
-              <Switch>
-              <Route exact path={`${url}/login`} component={LoginForm} />
-              <Route exact path={`${url}/register`} component={LoginForm} />
-              </Switch>
-              
-            </AuthorizeContainer> 
-          )}}
+            return (
+              <AuthorizeContainer>
+                <Switch>
+                  <Route exact path={`${url}/login`} component={LoginForm} />
+                  <Route exact path={`${url}/register`} component={LoginForm} />
+                </Switch>
+              </AuthorizeContainer>
+            )
+          }}
         />
-          <Route exact path='/404' component={NotFoundPage} />
-      
+        <Route exact path='/404' component={NotFoundPage} />
+
       </>
       <GlobalStyle />
       {/* <Route component={ListWarehouse} /> */}

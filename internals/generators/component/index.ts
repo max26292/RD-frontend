@@ -2,39 +2,40 @@
  * Component Generator
  */
 
-import { Actions, PlopGenerator } from 'node-plop';
-import path from 'path';
+import { Actions, PlopGeneratorConfig } from 'node-plop';
+import inquirer from 'inquirer';
 
-import { componentExists } from '../utils';
+import { pathExists } from '../utils';
+import { baseGeneratorPath } from '../paths';
+
+inquirer.registerPrompt('directory', require('inquirer-directory'));
 
 export enum ComponentProptNames {
-  'ComponentName' = 'ComponentName',
-  'wantMemo' = 'wantMemo',
-  'wantStyledComponents' = 'wantStyledComponents',
-  'wantTranslations' = 'wantTranslations',
-  'wantLoadable' = 'wantLoadable',
-  'wantTests' = 'wantTests',
+  componentName = 'componentName',
+  path = 'path',
+  wantMemo = 'wantMemo',
+  wantStyledComponents = 'wantStyledComponents',
+  wantTranslations = 'wantTranslations',
+  wantLoadable = 'wantLoadable',
+  wantTests = 'wantTests',
 }
-const componentsPath = path.join(__dirname, '../../../src/app/components');
 
-export const componentGenerator: PlopGenerator = {
-  description: 'Add an unconnected component',
+type Answers = { [P in ComponentProptNames]: string };
+
+export const componentGenerator: PlopGeneratorConfig = {
+  description: 'Add a component',
   prompts: [
     {
       type: 'input',
-      name: ComponentProptNames.ComponentName,
+      name: ComponentProptNames.componentName,
       message: 'What should it be called?',
-      default: 'Button',
-      validate: value => {
-        if (/.+/.test(value)) {
-          return componentExists(value)
-            ? 'A component with this name already exists'
-            : true;
-        }
-
-        return 'The name is required';
-      },
     },
+    {
+      type: 'directory',
+      name: ComponentProptNames.path,
+      message: 'Where do you want it to be created?',
+      basePath: `${baseGeneratorPath}`,
+    } as any,
     {
       type: 'confirm',
       name: ComponentProptNames.wantMemo,
@@ -67,39 +68,54 @@ export const componentGenerator: PlopGenerator = {
       message: 'Do you want to have tests?',
     },
   ],
-  actions: (data: { [P in ComponentProptNames]: string }) => {
-    const containerPath = `${componentsPath}/{{properCase ${ComponentProptNames.ComponentName}}}`;
+  actions: data => {
+    const answers = data as Answers;
 
+    const componentPath = `${baseGeneratorPath}/${answers.path}/{{properCase ${ComponentProptNames.componentName}}}`;
+    const actualComponentPath = `${baseGeneratorPath}/${answers.path}/${answers.componentName}`;
+
+    if (pathExists(actualComponentPath)) {
+      throw new Error(`Component '${answers.componentName}' already exists`);
+    }
     const actions: Actions = [
       {
         type: 'add',
-        path: `${containerPath}/index.tsx`,
+        path: `${componentPath}/index.tsx`,
         templateFile: './component/index.tsx.hbs',
         abortOnFail: true,
       },
     ];
 
-    if (data.wantLoadable) {
+    if (answers.wantLoadable) {
       actions.push({
         type: 'add',
-        path: `${containerPath}/Loadable.ts`,
+        path: `${componentPath}/Loadable.ts`,
         templateFile: './component/loadable.ts.hbs',
         abortOnFail: true,
       });
     }
 
-    if (data.wantTests) {
+    if (answers.wantTests) {
       actions.push({
         type: 'add',
-        path: `${containerPath}/__tests__/index.test.tsx`,
+        path: `${componentPath}/__tests__/index.test.tsx`,
         templateFile: './component/index.test.tsx.hbs',
+        abortOnFail: true,
+      });
+    }
+
+    if (answers.wantTranslations) {
+      actions.push({
+        type: 'add',
+        path: `${componentPath}/messages.ts`,
+        templateFile: './component/messages.ts.hbs',
         abortOnFail: true,
       });
     }
 
     actions.push({
       type: 'prettify',
-      data: { path: `${componentsPath}/${data.ComponentName}/**` },
+      data: { path: `${actualComponentPath}/**` },
     });
 
     return actions;

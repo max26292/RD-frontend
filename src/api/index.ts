@@ -5,6 +5,7 @@ import { actions } from './slice';
 import { config } from 'config';
 import { isEmpty } from 'lodash';
 import { ResponseType } from './types';
+import { requestState } from './selectors';
 // export function requestApi<T,TResponse>(data: IapiRequest <T>):Observable<TResponse>|Observable<Array<TResponse>>{
 
 export function requestApi<T, RT>(data: IapiRequest<T>): ResponseType<RT> {
@@ -53,4 +54,5 @@ return Qs.stringify(params, {arrayFormat: 'brackets'})
   return res;
 }
 
-export const { makeRequest } = actions;
+export const { makeRequest, isLoading, isLoaded } = actions;
+export { requestState };

@@ -20,6 +20,7 @@ import * as serviceWorker from 'serviceWorker';
 import { configureAppStore } from 'store/configureStore';
 // Initialize languages
 import './locales/i18n';
+import { LoadingComponent } from 'app/components/LoadingComponent';
 
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 
@@ -30,7 +31,7 @@ const { store, persistor } = configureAppStore();
 const ConnectedApp = ({ Component }: Props) => {
   return(
   <Provider store={store} context={ReactReduxContext}>
-    <PersistGate loading={<Spinner color="warning" />} persistor={persistor} >
+    <PersistGate loading={<LoadingComponent color="warning" />} persistor={persistor} >
       <HelmetProvider>
         <Component />
       </HelmetProvider>

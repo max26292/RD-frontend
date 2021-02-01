@@ -31,16 +31,7 @@ interface LoginInfo {
 export function LoginPage(props) {
 
   const selectData  =  useSelector(selectAuthInfo);
-  const dispatch = useDispatch()
-  useEffect(() => {
-    console.debug(selectData);
-    // const {token}  =  selectData ;
-    // if(token.length>0){
-    //   // history.push('/data-declare');
-    // }
-  }, [selectData])
-
-
+  const dispatch = useDispatch();
   const requestParams: LoginInfo = qs.parse(props.location.search, {
     ignoreQueryPrefix: true,
   });
